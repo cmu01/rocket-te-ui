@@ -19,7 +19,7 @@
           "options": {
             "outputPath": "dist/rocket-ui",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "main": "index.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "scss/styles.scss"
             ],
             "scripts": []
           },
@@ -92,7 +93,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "scss/styles.scss"
             ],
             "scripts": []
           }
@@ -123,6 +125,50 @@
           }
         }
       }
-    }},
-  "defaultProject": "rocket-ui"
+    },
+    "rocket-ui-lib": {
+      "projectType": "library",
+      "root": "projects/rocket-ui-lib",
+      "sourceRoot": "projects/rocket-ui-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/rocket-ui-lib/tsconfig.lib.json",
+            "project": "projects/rocket-ui-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/rocket-ui-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/rocket-ui-lib/src/test.ts",
+            "tsConfig": "projects/rocket-ui-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/rocket-ui-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/rocket-ui-lib/tsconfig.lib.json",
+              "projects/rocket-ui-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "rocket-ui",
+  "cli": {
+    "analytics": false
+  }
 }

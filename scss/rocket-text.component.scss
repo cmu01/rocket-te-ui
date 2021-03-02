@@ -1,0 +1,21 @@
+.rocket-text .tooltip {
+    margin-left: .5rem;
+}
+
+.tooltip-mt {
+    margin-top: -2px;
+}
+
+.bx--form-requirement.input-invalid {
+    color: #e0182d;
+    display: block;
+    max-height: 100%;
+  }
+ 
+.marker::after{
+    content: "*";
+    color: #e0182d;
+    margin-left: 4px;
+    margin-right: 7px;
+    vertical-align: -15%;
+}

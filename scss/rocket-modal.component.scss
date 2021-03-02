@@ -1,0 +1,26 @@
+.bx--modal-content {
+    min-height: 4rem;
+    padding-right: 1rem !important;
+}
+
+.hidden {
+    header .bx--modal-close {
+        display: none;
+    }
+   
+}
+
+.bx--modal-container {
+    max-width: 50rem !important;
+}
+
+.model-xl {
+    .bx--modal-container {
+        width: 80%;
+        height: 80%;
+        max-width: 75rem !important;
+        min-height: 30rem;
+        overflow: auto;
+    }
+
+}
