@@ -3,7 +3,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'rocket-icon',
   template: `
-  <div [ngClass]="{'rocket-icon': options.isCenter}" class='inline'>
+  <div [ngClass]="{'rocket-icon': options.isCenter}" class='rocket-icon-inline'>
     <ng-container *ngIf='!options.isImg' [ngSwitch]="type"> 
         <svg *ngSwitchCase="'view'" ibmIconView [size]="options.size || '16'"></svg>
         <svg *ngSwitchCase="'view-off'" ibmIconViewOff [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
