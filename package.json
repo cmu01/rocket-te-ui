@@ -3,6 +3,7 @@
   "version": "0.0.12",
   "author": "cmu",
   "license": "MIT",
+  "main": "./dist/rocket-ui-lib",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

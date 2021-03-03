@@ -1,6 +1,3 @@
 src
-projects
 node_modules
 e2e
-tsconfig.json
-tslint.json
