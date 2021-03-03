@@ -21,4 +21,8 @@
 @import './rocket-search.component.scss';
 @import './rocket-icon.component.scss';
 @import './rocket-placeholder.component.scss';
- 
+
+.row {
+    display: flex;
+    flex-direction: row;
+}

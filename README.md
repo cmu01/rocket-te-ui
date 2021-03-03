@@ -29,7 +29,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## How to use
 
 Used to generate rocket-ui for te team:
-   run `ng build rocket-ui-lib` to generate dist folder;
+   run `npm run build` to generate dist folder;
+      `ng build rocket-ui-lib`
+      `node-sass` generate compressed css file
+
    copy it into `rocket-ui` project;
    `git push into master`
    `git tag newTag -m "command"`
