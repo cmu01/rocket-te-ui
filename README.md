@@ -26,9 +26,17 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## How to use
+## How to use to NPM
 
-Used to generate rocket-ui for te team:
+  `ng build rocket-ui-lib`
+  chang `version` in package.json
+  `npm publish`
+
+  Go to bzshared/webmart
+  `npm install`
+
+<!-- To Github
+  Used to generate rocket-ui for te team:
    run `npm run build` to generate dist folder;
       `ng build rocket-ui-lib`
       `node-sass` generate compressed css file
@@ -36,7 +44,7 @@ Used to generate rocket-ui for te team:
    copy it into `rocket-ui` project;
    `git push into master`
    `git tag newTag -m "command"`
-   `git push --tag`
+   `git push --tag` -->
 
 
 # About scss folder
