@@ -1,9 +1,13 @@
 {
   "name": "rocket-te-ui",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "author": "cmu",
   "license": "MIT",
   "main": "./dist/rocket-ui-lib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmu01/rocket-te-ui.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
