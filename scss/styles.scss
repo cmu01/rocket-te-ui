@@ -26,3 +26,15 @@
     display: flex;
     flex-direction: row;
 }
+
+.marker::after{
+    content: "*";
+    color: #e0182d;
+    margin-left: 4px;
+    margin-right: 7px;
+    vertical-align: -15%;
+}
+
+.relative {
+    position:relative;
+}

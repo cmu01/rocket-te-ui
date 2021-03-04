@@ -12,50 +12,53 @@ function sort(model, index: number) {
 @Component({
   selector: 'rocket-table',
   template: `
-    <ibm-table-container>
-      <ibm-table-toolbar-content>
-        <ibm-search *ngIf='(options.showBtn || {}).search' id='rocket-table-search' size='sm' tableSearch="true" [value]='filter' autocomplete="off" (valueChange)="searchElm($event)" (clear)="clearElm()"></ibm-search>
-        <button *ngIf='(options.showBtn || {}).export' id='table-export-btn' size='sm' ibmButton="secondary" title=''>
-          <a class='a-table' href="{{exports()}}" download>{{options.labels.export}}</a>
-          </button>
-
-          <button *ngIf='(options.showBtn || {}).import' [id]="(id || options.id || 'rocket-table') + 'table-import-btn'" size='sm' ibmButton="secondary" (click)="import()" title=''>
-            {{options.labels.import}}
-          </button>
-        <button *ngIf='(options.showBtn || {}).add' size='sm'  id='table-add-btn' ibmButton="primary" (click)="addElm()" title='{{options.showAddButton.addLabel}}'>
-          {{options.showAddButton.addLabel}}
-        </button>
-      </ibm-table-toolbar-content>
-
-      <ng-template #overflowMenuItemTemplate let-data="data">
-        <ibm-overflow-menu id='table-overflow' *ngIf="options.actions.length > 1" title=''>
-            <ibm-overflow-menu-option class='reletive' *ngFor="let action of options.actions" (selected)="selected(action, data)">
-              <div [ngClass]="{'text-bold': action.value === 'delete'}">{{action.text}}</div>
-            </ibm-overflow-menu-option>
-        </ibm-overflow-menu>
-        <div class="reletive underline cursor1" *ngIf="options.actions.length === 1" title='' (click)="remove(data)">
-            {{options.actions[0].text}}
-        </div>
+    <div class='relative'>
+      <ibm-table-container>
+        <ibm-table-toolbar-content>
+          <ibm-search id='rocket-table-search' *ngIf='(options.showBtn || {}).search' size='sm' tableSearch="true" [value]='filter' autocomplete="off" (valueChange)="searchElm($event)" (clear)="clearElm()"></ibm-search>
+          <button *ngIf='(options.showBtn || {}).export' id='table-export-btn' size='sm' ibmButton="secondary" title=''>
+            <a class='a-table' href="{{exports()}}" download>{{options.labels.export}}</a>
+            </button>
       
-      </ng-template>
-
-      <div class='center' #ibmCenter>
-        <ibm-table #ibmTable
-          [id]="(id || 'rocket-table') + '-id'"
-          [model]="table.model"
-          [size]="table.size"
-          [showSelectionColumn]="table.showSelectionColumn"
-          [striped]="table.striped"
-          (sort)="simpleSort($event)"
-          (selectRow)="selectRow($event)"
-          (selectAll)="onSelectAll($event)"
-          (deselectAll)="onSelectAll($event)"
-          [isDataGrid]="table.isDataGrid">
-        </ibm-table>
-        <ibm-pagination id="rocket-table-ibmPagination" *ngIf="options.showPagination"
-        [itemsPerPageOptions]="options.itemsPerPageOptions || itemsPerPageOptions" [model]="table.model" (selectPage)="selectPage($event)"></ibm-pagination>
+            <button *ngIf='(options.showBtn || {}).import' [id]="(id || options.id || 'rocket-table') + 'table-import-btn'" size='sm' ibmButton="secondary" (click)="import()" title=''>
+              {{options.labels.import}}
+            </button>
+          <button *ngIf='(options.showBtn || {}).add' size='sm'  id='table-add-btn' ibmButton="primary" (click)="addElm()" title='{{options.showAddButton.addLabel}}'>
+            {{options.showAddButton.addLabel}}
+          </button>
+        </ibm-table-toolbar-content>
+      
+        <ng-template #overflowMenuItemTemplate let-data="data">
+          <ibm-overflow-menu id='table-overflow' [placement]="options.placement || 'bottom'" *ngIf="options.actions.length > 1" title=''>
+              <ibm-overflow-menu-option class='relative' *ngFor="let action of options.actions" (selected)="selected(action, data)">
+                <div [ngClass]="{'text-bold': action.value === 'delete'}">{{action.text}}</div>
+              </ibm-overflow-menu-option>
+          </ibm-overflow-menu>
+          <div class="relative underline cursor1" *ngIf="options.actions.length === 1" title='' (click)="remove(data)">
+              {{options.actions[0].text}}
+          </div>
+        
+        </ng-template>
+      
+        <div class='center' #ibmCenter>
+          <ibm-table #ibmTable
+            [id]="(id || 'rocket-table') + '-id'"
+            [model]="table.model"
+            [size]="table.size"
+            [showSelectionColumn]="table.showSelectionColumn"
+            [striped]="table.striped"
+            (sort)="simpleSort($event)"
+            (selectRow)="selectRow($event)"
+            (selectAll)="onSelectAll($event)"
+            (deselectAll)="onSelectAll($event)"
+            [isDataGrid]="table.isDataGrid">
+          </ibm-table>
+          <ibm-pagination id="rocket-table-ibmPagination" *ngIf="options.showPagination"
+          [itemsPerPageOptions]="options.itemsPerPageOptions || itemsPerPageOptions" [model]="table.model" (selectPage)="selectPage($event)"></ibm-pagination>
       </div>
-    </ibm-table-container>
+      </ibm-table-container>
+      <ibm-placeholder></ibm-placeholder>
+    </div>
   `,
   // styleUrls: ['./rocket-table.component.scss'],
   encapsulation: ViewEncapsulation.None

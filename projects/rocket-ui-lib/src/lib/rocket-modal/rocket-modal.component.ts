@@ -3,16 +3,15 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
 @Component({
   selector: 'rocket-modal',
   template: `
-      <ibm-modal *ngIf="show == null ? options[key] : show" [open]='show == null ? options[key] : show' [theme]="options.modalType || 'default'" (overlaySelected)="dismissModal()" 
+      <ibm-modal *ngIf='show == null ? options[key] : show' [open]='show == null ? options[key] : show' [theme]="options.modalType || 'default'" (overlaySelected)="dismissModal()" 
       [id]="(id || ('rocket-modal-' + options.header || '')) + '-id'" [ngClass]="{'model-xl': options.size == 'xl'}">
         <ibm-modal-header (closeSelect)="closeModal()" class="f2 bold" [ngClass]="{'hidden': options.hideClose}" modal-primary-focus>
           <p *ngIf="!!(options.subTitle || options.title || options.label)" class="bx--type-delta bx--modal-header__label">{{options.subTitle || options.title || options.label}}</p>
           <p class="bx--type-beta bx--modal-header__heading">{{options.header || ''}}</p>
         </ibm-modal-header>
-        <section class="bx--modal-content">
+        <div class='rocket-modal-content'>
           <ng-content></ng-content>
-          <!-- <p *ngIf="options.content">{{options.content || ''}}</p> -->
-        </section>
+        </div>
         <ibm-modal-footer *ngIf='!options.hideFooter'>
           <button *ngIf='!(options.cancelBtnOpts || {}).hide' [ibmButton]="(options.cancelBtnOpts || {}).kind || 'secondary'" (click)="closeModal($event)">{{getCancelBtn()}}</button>
           <button [ibmButton]="options.modalType === 'danger' ?  'danger' : 'primary'" [id]="(this.options.confirmBtnOpts || {}).id || 'rocket-modal-submit'" (click)="save()" [disabled]="isDisabled()">{{getSubmitBtn()}}</button>
@@ -53,9 +52,8 @@ export class RocketModalComponent implements OnInit {
   }
 
   closeModal($event?) {
-    this.close.emit($event);
-
     this.process(false);
+    this.close.emit($event);
   }
 
   dismissModal() {

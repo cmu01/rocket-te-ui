@@ -1,6 +1,10 @@
-.bx--modal-content {
-    min-height: 4rem;
+.rocket-modal-content {
+    padding-left: 1rem;
     padding-right: 1rem !important;
+    padding-top: .5rem;
+    margin-bottom: 2rem;
+    min-height: 4rem;
+    overflow-y: auto;
 }
 
 .hidden {
