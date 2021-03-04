@@ -37,7 +37,16 @@ function sort(model, index: number) {
           <div class="relative underline cursor1" *ngIf="options.actions.length === 1" title='' (click)="remove(data)">
               {{options.actions[0].text}}
           </div>
-        
+        </ng-template>
+
+        <ng-template #element let-data='data'>
+          <div *ngIf='options.showIcon'>
+            <ng-content></ng-content>{{data}}
+          </div>
+
+          <div *ngIf='options.showStatus'>
+            <div [ngStyle]="options.setStyle(data)"></div>{{data}}
+          </div>
         </ng-template>
       
         <div class='center' #ibmCenter>
@@ -80,6 +89,10 @@ export class RocketTableComponent implements OnInit {
 
   @ViewChild('overflowMenuItemTemplate', {static: true})
   protected overflowMenuItemTemplate: TemplateRef<any>;
+  
+  @ViewChild('element', {static: true})
+  protected element: TemplateRef<any>;
+
   @ViewChild('ibmTable') ibmTable: any;
   @ViewChild('ibmCenter') ibmCenter: any;
   resized$: any;
@@ -205,11 +218,7 @@ export class RocketTableComponent implements OnInit {
         const item: any = {data: (m.toLowerCase() === 'size' && pattNum.test(d[m])) ? Number(d[m]).toLocaleString(undefined, 
           {maximumFractionDigits: 2}) : d[m]};
 
-        // this.options.setCol(d, item, m, i, index);
-        if(m.toLowerCase() === 'action') {
-          item.data = d;
-          item.template = this.overflowMenuItemTemplate;
-        }
+        this.setStatus(d, m, item);
 
         tt.push(new TableItem(item));
       });
@@ -263,6 +272,18 @@ export class RocketTableComponent implements OnInit {
     return headers.map(d => {
       return {name: d, value: d}
     });
+  }
+
+  setStatus(d, m, item) {
+    if(m.toLowerCase() === 'action') {
+      item.data = d;
+      item.template = this.overflowMenuItemTemplate;
+      return;
+    }
+
+    if(!this.options.showStatus) return;
+
+    this.options.setStatus(item, d, m, this.element);
   }
 
   selectPage(page) {
