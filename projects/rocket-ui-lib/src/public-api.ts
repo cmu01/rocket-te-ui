@@ -3,8 +3,6 @@
  */
 
 
-export * from './lib/rocket-ui-lib.service';
-export * from './lib/rocket-ui-lib.component';
 export * from './lib/rocket-ui-lib.module';
 export * from './lib/rocket-select/rocket-select.component';
 export * from './lib/rocket-button/rocket-button.component';

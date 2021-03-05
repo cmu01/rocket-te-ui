@@ -1,18 +1,19 @@
+
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": true,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "module": "esnext",
     "moduleResolution": "node",
-    "importHelpers": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "lib": [
-      "es2018",
+      "es2016",
       "dom"
     ],
     "paths": {
@@ -22,10 +23,11 @@
 	    "rocket-ui-lib/*": [
         "dist/rocket-ui-lib/*"
       ]
-    }
+    },
+    "module": "esnext",
+    "baseUrl": "./"
   },
   "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
+		"enableIvy": false
+	}
 }
