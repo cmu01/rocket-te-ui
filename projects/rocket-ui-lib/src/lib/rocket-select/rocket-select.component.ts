@@ -25,7 +25,7 @@ export class RocketSelectComponent implements OnInit {
     if(this.id == null) {
       console.warn('Please set id for rocket-select');
     }
-    this.selected = this.selected || this.options.selected;
+    this.selected = this.selected || this.options.selected || '';
   }
 
   select(e) {
