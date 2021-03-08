@@ -2,29 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
 
 @Component({
   selector: 'rocket-toggle',
-  template: `
-    <div class='rocket-toggle row w1-toggle'>
-      <div class='row f4 lh1'>
-          <label [for]="(id || ('rocket-radio' + options.label || options.labels)) + '-id'">
-              {{options.label || options.labels}}
-          </label>
-          <rocket-tooltip class='lh2' [options]="tooltip"></rocket-tooltip>
-      </div>
-      <div class="f1">
-            <ibm-toggle 
-                [id]="(id || ('rocket-radio' + options.label || options.labels)) + '-id'"
-                label=""
-                onText=""
-                offText=""
-                [disabled]="options.disabled"
-                [checked]="options.enable"
-                (change) = "triggle($event)"
-                [size]="options.size || 'md'">
-            </ibm-toggle>
-      </div>
-    </div>
-  `,
-  // styleUrls: ['./rocket-toggle.component.scss'],
+  templateUrl: `./rocket-toggle.component.html`,
+  styleUrls: ['./rocket-toggle.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class RocketToggleComponent implements OnInit {

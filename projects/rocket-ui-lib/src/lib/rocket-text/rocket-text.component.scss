@@ -1,1 +1,15 @@
-@import '../../../../../scss/rocket-text.component';
+@import '../../../../../scss/styles.scss';
+
+.rocket-text .tooltip {
+    margin-left: .5rem;
+}
+
+.tooltip-mt {
+    margin-top: -2px;
+}
+
+.bx--form-requirement.input-invalid {
+    color: #e0182d;
+    display: block;
+    max-height: 100%;
+  }

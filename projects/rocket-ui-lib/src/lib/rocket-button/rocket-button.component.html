@@ -1,0 +1,7 @@
+<button [ibmButton]="options.kind" 
+  [id]="(id || ('rocket-button-' + options.text)) + '-id'"
+  [size]="options.size || 'sm'" 
+  [disabled]="disabled == null ? options.disabled : disabled" 
+  (click)="click($event)">
+  {{options.text}}<ng-content></ng-content>
+</button>

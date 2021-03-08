@@ -1,0 +1,14 @@
+<ibm-modal *ngIf='show == null ? options[key] : show' [open]='show == null ? options[key] : show' [theme]="options.modalType || 'default'" (overlaySelected)="dismissModal()" 
+[id]="(id || ('rocket-modal-' + options.header || '')) + '-id'" [ngClass]="{'model-xl': options.size == 'xl'}">
+  <ibm-modal-header (closeSelect)="closeModal()" class="f2 bold" [ngClass]="{'hidden': options.hideClose}" modal-primary-focus>
+    <p *ngIf="!!(options.subTitle || options.title || options.label)" class="bx--type-delta bx--modal-header__label">{{options.subTitle || options.title || options.label}}</p>
+    <p class="bx--type-beta bx--modal-header__heading">{{options.header || ''}}</p>
+  </ibm-modal-header>
+  <div class='rocket-modal-content'>
+    <ng-content></ng-content>
+  </div>
+  <ibm-modal-footer *ngIf='!options.hideFooter'>
+    <button *ngIf='!(options.cancelBtnOpts || {}).hide' [ibmButton]="(options.cancelBtnOpts || {}).kind || 'secondary'" (click)="closeModal($event)">{{getCancelBtn()}}</button>
+    <button [ibmButton]="options.modalType === 'danger' ?  'danger' : 'primary'" [id]="(this.options.confirmBtnOpts || {}).id || 'rocket-modal-submit'" (click)="save()" [disabled]="isDisabled()">{{getSubmitBtn()}}</button>
+  </ibm-modal-footer>
+</ibm-modal>

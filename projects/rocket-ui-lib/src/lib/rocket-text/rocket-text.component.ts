@@ -2,26 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
 
 @Component({
   selector: 'rocket-text',
-  template: `
-    <div class="rocket-text relative">
-      <div class='row' *ngIf="!!options.label">
-          <label [for]="(id || ('rocket-radio-' + options.label)) + '-id'" class="bx--label" [ngClass]="{'marker': options.marked}">
-            {{options.label}}
-          </label>
-          <rocket-tooltip class='tooltip-mt' [options]="tooltip"></rocket-tooltip>
-      </div>
-        <input [id]="(id || ('rocket-radio-' + options.label)) + '-id'" 
-        type="text" [size]="options.size || 'md'" 
-        [(ngModel)]="options.data" ibmText 
-        [placeholder]="options.placeholder || ''"
-        (blue)="onBlue($event)"
-        (ngModelChange)="onInputChange($event)" [disabled]="options.disabled" #rocketText="ngModel">
-        <div *ngIf="(rocketText.dirty || rocketText.touched) && options.isInvalid" class="bx--form-requirement input-invalid">
-          {{options.validationText}}
-        </div>
-    </div>
-  `,
-  // styleUrls: ['./rocket-text.component.scss'],
+  templateUrl: `./rocket-text.component.html`,
+  styleUrls: ['./rocket-text.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class RocketTextComponent implements OnInit {

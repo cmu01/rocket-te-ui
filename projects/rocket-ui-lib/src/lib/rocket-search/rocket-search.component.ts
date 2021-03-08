@@ -2,15 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
 
 @Component({
   selector: 'rocket-search',
-  template: `
-    <ibm-search [id]="(id || ('rocket-search-' + options.label || 'search')) + '-id'"
-      [placeholder]="options.placeholder || ''"
-      (valueChange)="update($event)"
-      [size]="options.size || 'sm'"
-      (clear)="reset()">
-    </ibm-search>
-  `,
-  // styleUrls: ['./rocket-search.component.scss'],
+  templateUrl: `./rocket-search.component.html`,
+  styleUrls: ['./rocket-search.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class RocketSearchComponent implements OnInit {

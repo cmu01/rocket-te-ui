@@ -2,16 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
 
 @Component({
   selector: 'rocket-accordion-item',
-  template: `
-    <ibm-accordion-item  
-      [expanded]="options.expanded == null ? 'true' : options.expanded"
-      [title]="options.title"
-      [id]="(id || ('rocket-accordion-' + options.title)) + '-id'"
-      (selected)="select($event)">
-      <ng-content></ng-content>
-    </ibm-accordion-item>
-  `,
-  // styleUrls: ['./rocket-accordion-item.component.scss'],
+  templateUrl: `./rocket-accordion-item.component.html`,
+  styleUrls: ['./rocket-accordion-item.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class RocketAccordionItemComponent implements OnInit {

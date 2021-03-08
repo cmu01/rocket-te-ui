@@ -1,1 +1,16 @@
-@import '../../../../../scss/rocket-icon.component.scss'
+@import '../../../../../scss/styles.scss';
+
+.rocket-icon {
+    position: relative;
+    width: 1rem;
+    height: 22px;
+    svg {
+        position: absolute;
+        margin-top: .5rem;
+    }
+}
+
+.rocket-icon-inline {
+    display: inline-block !important;
+}
+

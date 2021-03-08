@@ -2,16 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
 
 @Component({
   selector: 'rocket-button',
-  template: `
-    <button [ibmButton]="options.kind" 
-      [id]="(id || ('rocket-button-' + options.text)) + '-id'"
-      [size]="options.size || 'sm'" 
-      [disabled]="disabled == null ? options.disabled : disabled" 
-      (click)="click($event)">
-      {{options.text}}<ng-content></ng-content>
-    </button>
-  `,
-  // styleUrls: ['./rocket-button.component.scss'],
+  templateUrl: `./rocket-button.component.html`,
+  styleUrls: ['./rocket-button.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class RocketButtonComponent implements OnInit {

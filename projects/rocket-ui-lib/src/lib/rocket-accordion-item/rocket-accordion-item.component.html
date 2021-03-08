@@ -1,0 +1,7 @@
+<ibm-accordion-item  
+    [expanded]="options.expanded == null ? 'true' : options.expanded"
+    [title]="options.title"
+    [id]="(id || ('rocket-accordion-' + options.title)) + '-id'"
+    (selected)="select($event)">
+    <ng-content></ng-content>
+</ibm-accordion-item>

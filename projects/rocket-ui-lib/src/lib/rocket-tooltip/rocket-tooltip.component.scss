@@ -1,1 +1,33 @@
-@import '../../../../../scss/rocket-tooltip.component.scss';
+@import '../../../../../scss/styles.scss';
+
+.bx--assistive-text {
+    max-width: 50vw !important;
+}
+
+.tooltip-pl {
+    padding-left: .25rem;
+}
+
+.bx--tooltip  {
+    position: absolute;
+    z-index: 10000;
+    max-width: 50vw;
+}
+
+.inline {
+    display: inline; 
+}
+
+.absolute {
+    position: absolute;
+}
+
+rocket-tooltip > ibm-placeholder > ibm-tooltip {
+    display: block !important;
+}
+
+rocket-tooltip ibm-tooltip-icon ibm-icon-information {
+    svg {
+        margin-top: .05rem;
+    }
+}

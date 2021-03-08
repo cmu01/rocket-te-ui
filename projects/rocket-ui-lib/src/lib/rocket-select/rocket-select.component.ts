@@ -2,33 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
 
 @Component({
   selector: 'rocket-select',
-  template: `
-    <ng-container>
-      <div class='row' *ngIf="!!options.label">
-          <label [for]="(id || ('rocket-select-' + options.label)) + '-id'" class="bx--label" [ngClass]="{'marker': options.marked}">
-              {{options.label}}
-          </label>
-          <rocket-tooltip class='tooltip-mt' [id]="(id || ('rocket-select-' + options.label)) + '-id'" [options]="tooltip || {}"></rocket-tooltip>
-      </div>
-      <ibm-select [id]="(id || ('rocket-select-' + options.label)) + '-id'" [(ngModel)]="selected" [size]="options.size || 'md'" 
-          [ngClass]="{'sm': options.size === 'sm'}" 
-          label= "" 
-          [display]="options.display || 'default'"
-          (change)="select($event)">
-          <ng-container *ngIf="options.isGroup">
-              <option value="" disabled [selected]='!selected' hidden></option>
-              <optgroup *ngFor="let item of options.data" [label]="item.text">
-                  <option *ngFor="let type of item.children" [value]="type.value" [selected]='type.value === selected'>{{type.text}}</option>
-              </optgroup >
-          </ng-container>
-          <ng-container *ngIf="!options.isGroup">
-              <option value="" disabled [selected]='!selected' hidden></option>
-              <option *ngFor="let item of (options.data || items)"  [selected]='getValue(item) === selected'[value]="getValue(item)">{{getLabel(item)}}</option>
-          </ng-container>
-      </ibm-select>
-    </ng-container>
-  `,
-  // styleUrls: ['./rocket-select.component.scss'],
+  templateUrl: `./rocket-select.component.html`,
+  styleUrls: ['./rocket-select.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 /*

@@ -1,0 +1,6 @@
+<ibm-search [id]="(id || ('rocket-search-' + options.label || 'search')) + '-id'"
+    [placeholder]="options.placeholder || ''"
+    (valueChange)="update($event)"
+    [size]="options.size || 'sm'"
+    (clear)="reset()">
+</ibm-search>

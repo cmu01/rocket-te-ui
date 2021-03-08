@@ -1,1 +1,23 @@
-@import '../../../../../scss/rocket-toggle.component.scss';
+@import '../../../../../scss/styles.scss';
+
+
+.w1-toggle {
+    position: relative;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+
+.rocket-toggle  .bx--toggle__switch {
+    margin-top: 0;
+}
+
+.lh1 {
+    line-height: 30px;
+    pointer-events: none;
+}
+
+.lh2 {
+    line-height: 36px;
+    pointer-events: auto;
+}

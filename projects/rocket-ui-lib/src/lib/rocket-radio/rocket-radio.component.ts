@@ -2,33 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
 
 @Component({
   selector: 'rocket-radio',
-  template: `
-    <fieldset *ngIf="!options.isRadio" class="bx--fieldset">
-      <div class='row'>
-          <label class="bx--label" [for]="(id || ('rocket-radio-' + options.label || options.groupLabel)) + '-id'" [ngClass]="{'marker': options.marked}">
-              {{options.label || options.groupLabel}}
-          </label>
-          <div class='tooltip'>
-              <rocket-tooltip *ngIf="tooltip.show" [options]="tooltip" [id]="(id || ('rocket-radio-' + options.label || options.groupLabel)) + '-id'"></rocket-tooltip>
-          </div>
-      </div>
-      <ibm-radio-group
-          [id]="(id || ('rocket-radio-' + options.label || options.groupLabel)) + '-id'"
-          aria-label="radiogroup"
-          [orientation]="options.orientation || 'horizontal'"
-          [(ngModel)]="selected"
-          (change)="onChange($event)">
-
-          <ibm-radio *ngFor="let radio of options.data"
-              [value]="radio.value"
-              [checked] = "selected === radio.value"
-              [disabled]="radio.disabled">
-              {{radio.text || radio.label}}
-          </ibm-radio>
-      </ibm-radio-group>
-    </fieldset>
-  `,
-  // styleUrls: ['./rocket-radio.component.scss'],
+  templateUrl: `./rocket-radio.component.html`,
+  styleUrls: ['./rocket-radio.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class RocketRadioComponent implements OnInit {
