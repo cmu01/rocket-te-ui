@@ -52,5 +52,5 @@
       [itemsPerPageOptions]="options.itemsPerPageOptions || itemsPerPageOptions" [model]="table.model" (selectPage)="selectPage($event)"></ibm-pagination>
   </div>
   </ibm-table-container>
-  <ibm-placeholder></ibm-placeholder>
+  <ibm-placeholder *ngIf="options.showPlaceholder"></ibm-placeholder>
 </div>

@@ -34,12 +34,8 @@
         <svg *ngSwitchCase="'edit'" ibmIconEdit [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
         <svg *ngSwitchCase="'undo'" ibmIconUndo [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
         <svg *ngSwitchCase="'y-axis'" attr-desc='YAxis' ibmIconYAxis [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'caret-up'" ibmIconCaretUp attr-desc='group' [size]="options.size || '16'" [ngStyle]='setColor()'>
-            <ng-content></ng-content>
-        </svg>
-        <svg *ngSwitchCase="'caret-down'" ibmIconCaretDown [size]="options.size || '16'" [ngStyle]='setColor()'>
-            <ng-content></ng-content>
-        </svg>
+        <svg *ngSwitchCase="'caret-up'" ibmIconCaretUp attr-desc='group' [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
+        <svg *ngSwitchCase="'caret-down'" ibmIconCaretDown [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
         <svg *ngSwitchCase="'settings-adjust'" ibmIconSettingsAdjust attr-desc='SettingsAdjust' [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
         <svg *ngSwitchCase="'visual-recognition'" ibmIconVisualRecognition attr-desc='visual-recognition' [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
         <svg *ngSwitchCase="'warning-filled'" ibmIconWarningFilled attr-desc='WarningFilled' [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
