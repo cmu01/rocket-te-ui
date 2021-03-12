@@ -5,8 +5,8 @@
     [id]="(id || ('rocket-checkbox-' + (options.text || options.label || ''))) + '-id'"
     (change)="change($event)">
     <div class='row'>
-        <span #ref><ng-content></ng-content></span>
-        <span *ngIf="!ref.innerHTML.trim() && !!options.label">{{options.label}}</span>
+        <span #ref class='multiSpace'><ng-content></ng-content></span>
+        <span *ngIf="!ref.innerHTML.trim() && !!options.label" class='multiSpace'>{{options.label}}</span>
         <rocket-tooltip [options]='tooltip'></rocket-tooltip>
     </div>  
 </ibm-checkbox>

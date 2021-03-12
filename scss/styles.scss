@@ -26,3 +26,13 @@
 .cursor1 {
     cursor: pointer;
 }
+
+.multiSpace {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+}
+
+.noEvent {
+    pointer-events: none;
+}

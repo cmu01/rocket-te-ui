@@ -57,7 +57,7 @@ export class RocketTableComponent implements OnInit {
   constructor( ) {}
 
   ngOnChanges() {
-    this.getData();
+    this.getData(this.options.filter);
   }
 
   ngOnInit(): void {
@@ -100,15 +100,37 @@ export class RocketTableComponent implements OnInit {
     // }
 
     const selcts = this.table.model.rowsSelected;
-    const data = this.data.rows.filter((d,i) => selcts[i]);
+    const data = this.data.rows
+      .filter((d,i) => selcts[i]);
     this.selectList.emit(data);
   }
 
-  onSelectAll($event) {
+  getSelectedData($event) {
     const selcts = this.table.model.rowsSelected;
-    const data = this.data.rows.filter((d,i) => selcts[i]);
+    const primary = this.options.headers[0].key;
+    const filter = this.options.filter || '';
+
+    const data = this.data.rows
+      .filter(d => d[primary].toLowerCase().includes(filter.toLowerCase()))
+      .filter((d,i) => selcts[i]);
+
+    return data;
+  }
+
+  onSelectAll($event) {
+    
+    this.table.model.selectAll(true);
+    const data = this.getSelectedData($event);
+
     this.selectList.emit(data);
   }
+
+  onDeselectAll($event) {
+    const data = this.getSelectedData($event);
+
+    this.table.model.selectAll(false);
+		this.selectList.emit(data);
+	}
   
   getData(filter = null) {
     if(this.data == null) {
@@ -246,11 +268,14 @@ export class RocketTableComponent implements OnInit {
   }
 
   update() {
-    this.getData();
+    this.getData(this.options.filter);
   }
 
   remove($event) {
-    this.selectAction.emit({data: $event, type: 'delete'});
+    const key = this.options.primary;
+    const data = this.data.rows.find(d => d[key] == $event[key]);
+
+    this.selectAction.emit({data, type: 'delete'});
   }
 
   addElm() {
@@ -261,13 +286,13 @@ export class RocketTableComponent implements OnInit {
 
   searchElm($event) {
     // this.search.emit(this.filter);
-    this.filter = $event;
-    this.getData(this.filter);
+    this.options.filter = $event;
+    this.getData(this.options.filter);
   }
 
   clearElm() {
-    this.filter = '';
-    this.getData(this.filter);
+    this.options.filter = '';
+    this.getData(this.options.filter);
     // this.clear.emit(this.filter);
   }
 

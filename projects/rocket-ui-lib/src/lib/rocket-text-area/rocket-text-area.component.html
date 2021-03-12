@@ -5,7 +5,8 @@
         </label>
        <rocket-tooltip class='tooltip-mt' [options]="tooltip"></rocket-tooltip>
     </div>
-     <textarea [id]="(id || ('rocket-radio-' + options.label)) + '-id'" type="text" [(ngModel)]="options.data" ibmTextArea [placeholder]="options.placeholder"
+     <textarea [id]="(id || ('rocket-radio-' + options.label)) + '-id'" type="text" 
+     [(ngModel)]="options.data" ibmTextArea [placeholder]="options.placeholder"
       (ngModelChange)="onInputChange($event)"[rows]="options.rows"
       [cols]="options.cols" [disabled]="options.disabled" #textArea="ngModel"></textarea>
      <div *ngIf="(textArea.dirty || textArea.touched) && options.isInvalid" class="bx--form-requirement input-invalid">
