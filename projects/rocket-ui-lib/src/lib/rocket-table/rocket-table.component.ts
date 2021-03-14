@@ -93,19 +93,13 @@ export class RocketTableComponent implements OnInit {
   }
 
   selectRow(index: number) {
-    // if(this.options.selectRow) {
-    //   this.options.selectRow(this.table.model, index);
-    // } else {
-    //   // sort(this.table.model, index);
-    // }
-
     const selcts = this.table.model.rowsSelected;
     const data = this.data.rows
       .filter((d,i) => selcts[i]);
     this.selectList.emit(data);
   }
 
-  getSelectedData($event) {
+  getSelectedData() {
     const selcts = this.table.model.rowsSelected;
     const primary = this.options.headers[0].key;
     const filter = this.options.filter || '';
@@ -120,13 +114,13 @@ export class RocketTableComponent implements OnInit {
   onSelectAll($event) {
     
     this.table.model.selectAll(true);
-    const data = this.getSelectedData($event);
+    const data = this.getSelectedData();
 
     this.selectList.emit(data);
   }
 
   onDeselectAll($event) {
-    const data = this.getSelectedData($event);
+    const data = this.getSelectedData();
 
     this.table.model.selectAll(false);
 		this.selectList.emit(data);

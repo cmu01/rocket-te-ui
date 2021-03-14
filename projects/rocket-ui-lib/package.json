@@ -5,8 +5,8 @@
     "@angular/common": "^9.1.13",
     "@angular/core": "^9.1.13",
     "@carbon/icons-angular": "^11.2.1",
-    "carbon-components": "^10.26.0",
-    "carbon-components-angular": "^4.36.1"
+    "carbon-components": "^10.30.0",
+    "carbon-components-angular": "^4.42.0"
   },
   "dependencies": {
     "tslib": "^1.10.0"

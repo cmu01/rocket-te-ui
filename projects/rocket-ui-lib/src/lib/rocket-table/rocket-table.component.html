@@ -40,12 +40,13 @@
         [id]="(id || 'rocket-table') + '-id'"
         [model]="table.model"
         [size]="table.size"
+        [enableSingleSelect] = "false"
         [showSelectionColumn]="table.showSelectionColumn"
         [striped]="table.striped"
         (sort)="simpleSort($event)"
         (selectRow)="selectRow($event)"
         (selectAll)="onSelectAll($event)"
-        (deselectAll)="onSelectAll($event)"
+        (deselectAll)="onDeselectAll($event)"
         [isDataGrid]="table.isDataGrid">
       </ibm-table>
       <ibm-pagination id="rocket-table-ibmPagination" *ngIf="options.showPagination"
