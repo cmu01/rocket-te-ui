@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, enableProdMode } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputModule, ButtonModule, SliderModule, SearchModule, TableModule, ProgressIndicatorModule, ToggleModule, FileUploaderModule, 
@@ -33,6 +33,8 @@ import { RocketTextDirective } from './rocket-text.directive';
 import { RocketLabelDirective } from './rocket-label.directive';
 import { RocketLoadingComponent } from './rocket-loading/rocket-loading.component';
 import { RocketPlaceholderComponent } from './rocket-placeholder/rocket-placeholder.component';
+
+enableProdMode();
 
 @NgModule({
     declarations: [
