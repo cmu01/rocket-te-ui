@@ -68,29 +68,6 @@
     padding-right: 2rem;
   }
   
-  #rocket-table-ibmPagination {
-    .bx--select-input {
-      background-color: #e0e0e0 !important;
-    }
-    .bx--pagination__left {
-      flex: 3;
-      padding-right: 0 !important;
-      .bx--select {
-        max-width: 5rem;
-      }
-      .bx--pagination__text {
-        margin-left: 0;
-      }
-    }
-    .bx--pagination__right {
-      flex: 2 ;
-      justify-content: flex-end;
-      .bx--select {
-        max-width: 4rem;
-      }
-    }
-  }
-  
   #rocket-table-search {
     .bx--search {
       max-width: 28.125rem;
