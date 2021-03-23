@@ -99,6 +99,13 @@ export class RocketTableComponent implements OnInit {
     this.selectList.emit(data);
   }
 
+  deselectRow(index: number) {
+    const selcts = this.table.model.rowsSelected;
+    const data = this.data.rows
+      .filter((d,i) => selcts[i]);
+    this.selectList.emit(data);
+  }
+
   getSelectedData() {
     const selcts = this.table.model.rowsSelected;
     const primary = this.options.headers[0].key;
@@ -183,22 +190,6 @@ export class RocketTableComponent implements OnInit {
       });
       this.orgData.push(tt);
     })
-    
-    // this.orgData = data.map((d, index) => {
-
-    //   return Object.keys(d).map((m, i) => {
-    //     const item: any = {data: (m.toLowerCase() === 'size' && pattNum.test(d[m])) ? Number(d[m]).toLocaleString(undefined, 
-    //       {maximumFractionDigits: 2}) : d[m]};
-
-    //    // this.options.setCol(d, item, m, i, index);
-    //    if(m.toLowerCase() === 'action') {
-    //     item.data = d;
-    //     item.template = this.overflowMenuItemTemplate;
-    //   }
-
-    //     return new TableItem(item);
-    //   });
-    // });
 
     this.table.model.totalDataLength = this.options.totalDataLength || (data || []).length;
     const model = this.table.model;
@@ -261,7 +252,11 @@ export class RocketTableComponent implements OnInit {
     });
   }
 
-  update() {
+  update(key: string = '', type: string = '') {
+    if(type === 'delete') {
+      this.data.rows = this.data.rows.filter(d => d[this.options.primary] !== key)
+    }
+    
     this.getData(this.options.filter);
   }
 
