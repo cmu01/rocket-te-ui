@@ -1,7 +1,7 @@
 <div class='relative'>
   <ibm-table-container>
     <ibm-table-toolbar-content>
-      <ibm-search id='rocket-table-search' *ngIf='(options.showBtn || {}).search' size='sm' tableSearch="true" [value]='filter' autocomplete="off" (valueChange)="searchElm($event)" (clear)="clearElm()"></ibm-search>
+      <ibm-search id='rocket-table-search' *ngIf='(options.showBtn || {}).search' size='sm' tableSearch="true" [value]='filter' [title]="options.filter || ''" autocomplete="off" (valueChange)="searchElm($event)" (clear)="clearElm()"></ibm-search>
       <button *ngIf='(options.showBtn || {}).export' id='table-export-btn' size='sm' ibmButton="secondary" title=''>
         <a class='a-table' href="{{exports()}}" download>{{options.labels.export}}</a>
         </button>

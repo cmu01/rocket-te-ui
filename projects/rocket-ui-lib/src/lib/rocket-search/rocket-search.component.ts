@@ -11,6 +11,7 @@ export class RocketSearchComponent implements OnInit {
   @Input() id: string;
   @Output() onChange = new EventEmitter();
   @Output() clear = new EventEmitter();
+  value: string = '';
 
   constructor() { 
     
@@ -23,10 +24,12 @@ export class RocketSearchComponent implements OnInit {
   }
 
   update($event) {
+    this.value = $event;
     this.onChange.emit($event);
   }
 
   reset() {
+    this.value = '';
     this.clear.emit();
   }
 
