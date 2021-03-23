@@ -306,6 +306,7 @@ export class RocketTableComponent implements OnInit {
   ngOnDestroy() {
     clearTimeout(this.PaginationTimer);
     clearTimeout(this.actionTimer);
+    this.options.filter = "";
   }
 
 }

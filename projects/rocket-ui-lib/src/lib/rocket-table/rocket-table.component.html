@@ -15,12 +15,12 @@
     </ibm-table-toolbar-content>
   
     <ng-template #overflowMenuItemTemplate let-data="data">
-      <ibm-overflow-menu id='table-overflow' [placement]="options.placement || 'bottom'" *ngIf="options.actions.length > 1" title=''>
+      <ibm-overflow-menu id='table-overflow' [placement]="options.placement || 'bottom'" *ngIf="!options.showRemove" title=''>
           <ibm-overflow-menu-option class='relative' *ngFor="let action of options.actions" (selected)="selected(action, data)">
             <div [ngClass]="{'text-bold': action.value === 'delete'}">{{action.text}}</div>
           </ibm-overflow-menu-option>
       </ibm-overflow-menu>
-      <div class="relative underline cursor1" *ngIf="options.actions.length === 1" title='' (click)="remove(data)">
+      <div class="relative underline cursor1" *ngIf="options.showRemove" title='' (click)="remove(data)">
           {{options.actions[0].text}}
       </div>
     </ng-template>

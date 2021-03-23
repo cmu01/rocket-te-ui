@@ -14,13 +14,13 @@
         [display]="options.display || 'default'"
         (change)="select($event)">
         <ng-container *ngIf="options.isGroup">
-            <option *ngIf="options.blankOpt" value="" disabled [selected]='!selected' hidden></option>
+            <option *ngIf="!isIOS()" value="" disabled [selected]='!selected' hidden style="display: none;"></option>
             <optgroup *ngFor="let item of options.data" [label]="item.text">
                 <option *ngFor="let type of item.children" [value]="type.value" [selected]='type.value === selected'>{{type.text}}</option>
             </optgroup >
         </ng-container>
         <ng-container *ngIf="!options.isGroup">
-            <option *ngIf="options.blankOpt" value="" disabled [selected]='!selected' hidden></option>
+            <option *ngIf="!isIOS()" value="" disabled [selected]='!selected' hidden style="display: none;"></option>
             <option *ngFor="let item of (options.data || items)"  [selected]='getValue(item) === selected'[value]="getValue(item)">{{getLabel(item)}}</option>
         </ng-container>
     </ibm-select>

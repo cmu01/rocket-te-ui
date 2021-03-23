@@ -10,6 +10,7 @@
      [size]="options.size || 'md'" 
      [(ngModel)]="options.data" ibmText 
      [placeholder]="options.placeholder || ''"
+     [title]="options.title || ''"
      (blue)="onBlue($event)"
      (ngModelChange)="onInputChange($event)" 
      [disabled]="options.disabled" #rocketText="ngModel">
