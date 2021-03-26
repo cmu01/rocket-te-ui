@@ -3,7 +3,7 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputModule, ButtonModule, SliderModule, SearchModule, TableModule, ProgressIndicatorModule, ToggleModule, FileUploaderModule, 
      PaginationModule, DialogModule, ModalModule, RadioModule, AccordionModule ,NumberModule,DropdownModule,SelectModule,TagModule, CheckboxModule, 
-     NotificationModule, PlaceholderModule, LoadingModule, BreadcrumbModule
+     NotificationModule, PlaceholderModule, LoadingModule, BreadcrumbModule, TabsModule
     } from 'carbon-components-angular';
 import { RocketSelectComponent } from './rocket-select/rocket-select.component';
 import { RocketButtonComponent } from './rocket-button/rocket-button.component';
@@ -33,6 +33,12 @@ import { RocketTextDirective } from './rocket-text.directive';
 import { RocketLabelDirective } from './rocket-label.directive';
 import { RocketLoadingComponent } from './rocket-loading/rocket-loading.component';
 import { RocketPlaceholderComponent } from './rocket-placeholder/rocket-placeholder.component';
+import { RocketTabsComponent } from './rocket-tabs/rocket-tabs.component';
+import { RocketTabsNavDirective } from './rocket-tabs/rocket-tabs-nav.directive';
+import { RocketTabsUlDirective } from './rocket-tabs/rocket-tabs-ul.directive';
+import { RocketTabsLiDirective } from './rocket-tabs/rocket-tabs-li.directive';
+import { RocketTabsLinkDirective } from './rocket-tabs/rocket-tabs-link.directive';
+import { RocketTabsActiveDirective } from './rocket-tabs/rocket-tabs-active.directive';
 
 @NgModule({
     declarations: [
@@ -56,7 +62,13 @@ import { RocketPlaceholderComponent } from './rocket-placeholder/rocket-placehol
         RocketTextDirective,
         RocketLabelDirective,
         RocketLoadingComponent,
-        RocketPlaceholderComponent
+        RocketPlaceholderComponent,
+        RocketTabsComponent,
+        RocketTabsNavDirective,
+        RocketTabsUlDirective,
+        RocketTabsLiDirective,
+        RocketTabsLinkDirective,
+        RocketTabsActiveDirective
     ],
     imports: [
         CommonModule,
@@ -73,6 +85,7 @@ import { RocketPlaceholderComponent } from './rocket-placeholder/rocket-placehol
         RadioModule,
         DropdownModule,
         ToggleModule,
+        TabsModule,
         ModalModule,
         NotificationModule,
         SelectModule,
@@ -112,6 +125,7 @@ import { RocketPlaceholderComponent } from './rocket-placeholder/rocket-placehol
     ],
     exports: [
         RocketSelectComponent,
+        RocketTabsComponent,
         SliderModule,
         TableModule,
         FileUploaderModule,
@@ -140,6 +154,7 @@ import { RocketPlaceholderComponent } from './rocket-placeholder/rocket-placehol
         RocketNotificationComponent,
         RocketModalComponent,
         ViewModule,
+        TabsModule,
         ViewOffModule,
         ChevronDownModule,
         ChevronUpModule,
@@ -174,6 +189,11 @@ import { RocketPlaceholderComponent } from './rocket-placeholder/rocket-placehol
         CloseModule,
         BreadcrumbModule,
         UploadModule,
+        RocketTabsNavDirective,
+        RocketTabsUlDirective,
+        RocketTabsLiDirective,
+        RocketTabsLinkDirective,
+        RocketTabsActiveDirective,
         DeleteModule, UnlockedModule, DownloadModule, FolderModule, FolderAddModule, AddModule, SubtractAltModule,DocumentExportModule,
         RenewModule, TerminalModule, EditModule, UndoModule, YAxisModule, CaretUpModule, CaretDownModule, SettingsAdjustModule, 
         VisualRecognitionModule, WarningFilledModule, WarningModule, DocumentModule

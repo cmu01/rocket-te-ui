@@ -1,6 +1,22 @@
 import { Component, OnInit, Input, Output, EventEmitter, TemplateRef, ViewEncapsulation, ViewChild, HostListener } from '@angular/core';
 import { TableModel, TableHeaderItem, TableItem } from "carbon-components-angular";
 
+export class CustomHeaderItem extends TableHeaderItem {
+	// used for custom sorting
+	compare(one: TableItem, two: TableItem) {
+		const stringOne = (one.data.name || one.data.surname || one.data);
+		const stringTwo = (two.data.name || two.data.surname || two.data);
+
+		if (stringOne > stringTwo) {
+			return 1;
+		} else if (stringOne < stringTwo) {
+			return -1;
+		} else {
+			return 0;
+		}
+	}
+}
+
 function sort(model, index: number) {
 	if (model.header[index].sorted) {
 		// if already sorted flip sorting direction
@@ -8,6 +24,7 @@ function sort(model, index: number) {
 	}
 	model.sort(index);
 }
+  
 
 @Component({
   selector: 'rocket-table',
@@ -143,7 +160,7 @@ export class RocketTableComponent implements OnInit {
     const headers = this.data.headers || [];
     // this.options.header = headers;
     this.table.model.header = headers.map(d => {
-      return new TableHeaderItem({ data: d.name || d.value, sort: true });
+      return new CustomHeaderItem({ data: d.name || d.value, sort: true });
     });
 
     this.prepreData(filter);

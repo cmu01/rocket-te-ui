@@ -1,6 +1,7 @@
-<ibm-search [id]="(id || ('rocket-search-' + options.label || 'search')) + '-id'"
-    [placeholder]="options.placeholder || ''"
+<ibm-search [id]="(id || ('rocket-search-' + (options.label || 'search'))) + '-id'"
+    [placeholder]="options.placeholder || 'Search'"
     [title]="value"
+    [clearButtonTitle] = "options.clearButtonTitle || ''"
     (valueChange)="update($event)"
     [size]="options.size || 'sm'"
     (clear)="reset()">

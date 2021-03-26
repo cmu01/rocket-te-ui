@@ -1,0 +1,5 @@
+<ibm-tabs [id]="(id || 'rocket-tabs') + '-id'" [type]="options.type || 'container'" [followFocus]="options.followFocus" [isNavigation]="options.isNavigation" [cacheActive]="options.cacheActive">
+    <ibm-tab *ngFor='let item of options.data' [heading]="item.header" [title]="item.title || ''" [context]="options.context">
+        <ng-content></ng-content>
+    </ibm-tab>
+</ibm-tabs>
