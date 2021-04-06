@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'rocket-tabs',
@@ -9,12 +9,22 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
 export class RocketTabsComponent implements OnInit {
   @Input() options: any = {};
   @Input() id: string;
-  constructor() { }
+  @Output() onSelect = new EventEmitter();
+
+  constructor(private cdRef:ChangeDetectorRef) { }
 
   ngOnInit(): void {
     if(this.id == null) {
       console.warn('Please set id for rocket-tabs');
     }
+  }
+
+  ngAfterViewChecked() {
+    this.cdRef.detectChanges();
+  }
+
+  selected($event) {
+    this.onSelect.emit($event);
   }
 
 }

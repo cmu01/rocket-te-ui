@@ -31,7 +31,7 @@
       </div>
 
       <div *ngIf='options.showStatus'>
-        <div [ngStyle]="options.setStyle(data)"></div>{{data}}
+        <div [ngStyle]="options.setStyle(data.value)"></div>{{data.label}}
       </div>
     </ng-template>
   

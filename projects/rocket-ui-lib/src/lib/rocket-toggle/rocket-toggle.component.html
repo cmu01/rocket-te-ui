@@ -1,6 +1,6 @@
 <div class='rocket-toggle row w1-toggle'>
-    <div class='row f4 lh1'>
-        <label [for]="(id || ('rocket-radio' + options.label || options.labels)) + '-id'">
+    <div class='row f4 lh1 tog-display'>
+        <label class='ellipsis f-left tog-label' [for]="(id || ('rocket-radio' + options.label || options.labels)) + '-id'" [title]="options.label || options.labels">
             {{options.label || options.labels}}
         </label>
         <rocket-tooltip class='lh2' [options]="tooltip"></rocket-tooltip>

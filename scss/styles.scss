@@ -36,3 +36,21 @@
 .noEvent {
     pointer-events: none;
 }
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.f1 {
+    flex: 1;
+}
+
+.f4 {
+    flex: 4;
+}
+
+.f-left {
+    float: left;
+}
