@@ -5,7 +5,7 @@
   [ngClass]="{'rocket-tabs-only-header': options.onlyHeader == null ? true : options.onlyHeader}">
     <ng-container *ngFor='let item of options.data; let i = index' >
         <ibm-tab [heading]="item.label" [title]="item.title || ''" [active]='i === 0'
-         [id]="item.value" (selected)="selected(item.value)" [context]="item">
+         [id]="item.alias || item.value" (selected)="selected(item.value)" [context]="item">
             <ng-content></ng-content>
         </ibm-tab>
     </ng-container>

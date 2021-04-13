@@ -20,6 +20,7 @@ export class RocketTextAreaComponent implements OnInit {
     if(this.id == null) {
       console.warn('Please set id for rocket-text-area');
     }
+    this.options.data = this.options.data || '';
   }
   
   onInputChange($event) {

@@ -1,4 +1,4 @@
-<div class="rocket-text relative">
+<div class="rocket-text relative" [id]="(id || ('rocket-radio-' + options.label)) + '-node'">
    <div class='row' *ngIf="!!options.label">
       <label [for]="(id || ('rocket-radio-' + options.label)) + '-id'" class="bx--label" [ngClass]="{'marker': options.marked}">
          {{options.label}}
@@ -6,14 +6,15 @@
       <rocket-tooltip class='tooltip-mt' [options]="tooltip"></rocket-tooltip>
    </div>
     <input [id]="(id || ('rocket-radio-' + options.label)) + '-id'" 
-     type="text"
+     [type]="options.type || 'text'"
      [size]="options.size || 'md'" 
      [(ngModel)]="options.data" ibmText 
      [placeholder]="options.placeholder || ''"
      [title]="options.title || ''"
      (blue)="onBlue($event)"
-     (ngModelChange)="onInputChange($event)" 
+     (ngModelChange)="onInputChange($event)"
      [disabled]="options.disabled" #rocketText="ngModel">
+     <ng-content></ng-content>
     <div *ngIf="(rocketText.dirty || rocketText.touched) && options.isInvalid" class="bx--form-requirement input-invalid">
       {{options.validationText}}
     </div>

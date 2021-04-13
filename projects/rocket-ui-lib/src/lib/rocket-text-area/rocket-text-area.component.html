@@ -1,11 +1,11 @@
 <div class="rocket-text relative">
     <div class='row' *ngIf="!!options.label">
-       <label [for]="(id || ('rocket-radio-' + options.label)) + '-id'" class="bx--label" [ngClass]="{'marker': options.marked}">
+       <label [for]="(id || ('rocket-text-area-' + options.label)) + '-id'" class="bx--label" [ngClass]="{'marker': options.marked}">
            {{options.label}}
         </label>
        <rocket-tooltip class='tooltip-mt' [options]="tooltip"></rocket-tooltip>
     </div>
-     <textarea [id]="(id || ('rocket-radio-' + options.label)) + '-id'" type="text" 
+     <textarea [id]="(id || ('rocket-text-area-' + options.label)) + '-id'" type="text" 
      [(ngModel)]="options.data" ibmTextArea [placeholder]="options.placeholder"
       (ngModelChange)="onInputChange($event)"[rows]="options.rows"
       [cols]="options.cols" [disabled]="options.disabled" #textArea="ngModel"></textarea>

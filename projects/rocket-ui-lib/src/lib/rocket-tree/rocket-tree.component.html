@@ -1,0 +1,29 @@
+<ul class='relative'>
+    <ng-container
+      *ngTemplateOutlet="recursiveList; context:{ list: options.data, level: 0 }"
+    ></ng-container>
+  </ul>
+  
+  <ng-template #recursiveList let-list="list" let-level="level">
+    <li *ngFor="let item of list" class='relative ml3 lh2'>
+      <div class='row'>
+        <ng-container *ngIf='item.children'>
+            <rocket-icon class='pointer' [type]="item.open ? 'caret-down' : 'caret-right'" (onClick)="trigger(item)"></rocket-icon>
+        </ng-container>
+        <rocket-checkbox *ngIf="options.type === 'edit'" class='tree-checkbox' [options]="{label: item.label, checked: item.checked}" (onChange)="select(item)"></rocket-checkbox>
+        <ng-container *ngIf="options.type === 'view'">
+            <rocket-icon *ngIf="options.showFileType" type='document-blank'></rocket-icon>
+            <span class='pr0'>{{item.label}}</span>
+            <ng-container *ngIf="level === 0 && options.showResult">
+                <rocket-icon *ngIf='item.status' type="checkmark-filled" [options]="{color: options.succColor || '#24a148', isCenter: true}"></rocket-icon>
+                <rocket-icon *ngIf='!item.status' type='error-filled' [options]="{color: options.failedColor || '#e0182d', isCenter: true}"></rocket-icon>
+            </ng-container>
+        </ng-container>
+      </div>
+      <ul *ngIf="item.children && item.children.length > 0" [hidden]="!item.open" class='relative'>
+        <ng-container
+          *ngTemplateOutlet="recursiveList; context:{ list: item.children }"
+        ></ng-container>
+      </ul>
+    </li>
+  </ng-template>

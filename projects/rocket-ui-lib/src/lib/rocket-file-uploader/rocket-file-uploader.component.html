@@ -1,0 +1,12 @@
+<div  [id]="(id || ('rocket-uploader-' + options.text)) + '-id'">
+    <ibm-file-uploader
+        [title]="options.title || ''"
+        [description]="options.desc"
+        [buttonText]="options.buttonText"
+        [buttonType]="options.buttonType || 'primary'"
+        [accept]="options.accept"
+        [(files)]="options.files"
+        [(ngModel)]="options.files"
+        (filesChange)="upload($event)">
+    </ibm-file-uploader>
+</div>

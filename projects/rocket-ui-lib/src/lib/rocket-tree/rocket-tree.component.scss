@@ -1,0 +1,27 @@
+@import '../../../../../scss/styles.scss';
+
+.relative {
+    position: relative;
+}
+
+.tree-checkbox {
+    .bx--form-item .bx--checkbox-label:hover::before {
+        border-color: #0353e9;
+    }
+}
+
+.lh2 {
+    line-height: 2rem;
+}
+
+.relative {
+    position: relative;
+}
+
+.ml3 {
+    margin-left: 2rem;
+}
+
+.pointer {
+    cursor: pointer;
+}

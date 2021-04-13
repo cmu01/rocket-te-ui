@@ -1,47 +1,51 @@
 <div [ngClass]="{'rocket-icon': options.isCenter}" class='rocket-icon-inline'>
     <ng-container *ngIf='!options.isImg' [ngSwitch]="type"> 
-        <svg *ngSwitchCase="'view'" ibmIconView [size]="options.size || '16'"></svg>
-        <svg *ngSwitchCase="'view-off'" ibmIconViewOff [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'information'" ibmIconInformation [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'checkmark-filled'" ibmIconCheckmarkFilled [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'chevron-up'" ibmIconChevronUp [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'chevron-down'" ibmIconChevronDown [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'chevron-left'" ibmIconChevronLeft [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'chevron-right'" ibmIconChevronRight [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'arrow-left'" ibmIconArrowLeft [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'arrow-right'" ibmIconArrowRight [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'home'" ibmIconHome [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'settings'" ibmIconSettings [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'user'" ibmIconUserFilled [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'data-structured'" attr-desc='session' ibmIconDataStructured [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'data-1'" ibmIconData_1 attr-desc='group' [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'checkmark'" ibmIconCheckmark [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'radio-button'" ibmIconRadioButton attr-desc='circle' [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'collaborate'" ibmIconCollaborate attr-desc='login' [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'play-outline'" ibmIconPlayOutline attr-desc='video' [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'close'" ibmIconClose [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'upload'" ibmIconUpload [size]="options.size || '16'"></svg>
-        <svg *ngSwitchCase="'delete'" ibmIconDelete [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'unlocked'" ibmIconUnlocked [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'download'" ibmIconDownload [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'folder'" ibmIconFolder [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'folder-add'" ibmIconFolderAdd [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'add'" ibmIconAdd [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'subtract-alt'" ibmIconSubtractAlt [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'document-export'" ibmIconDocumentExport [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'renew'" ibmIconRenew [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'terminal'" ibmIconTerminal [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'edit'" ibmIconEdit [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'undo'" ibmIconUndo [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'y-axis'" attr-desc='YAxis' ibmIconYAxis [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'caret-up'" ibmIconCaretUp attr-desc='group' [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'caret-down'" ibmIconCaretDown [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'settings-adjust'" ibmIconSettingsAdjust attr-desc='SettingsAdjust' [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'visual-recognition'" ibmIconVisualRecognition attr-desc='visual-recognition' [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'warning-filled'" ibmIconWarningFilled attr-desc='WarningFilled' [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'warning'" ibmIconWarning [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'document'" ibmIconDocument [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
-        <svg *ngSwitchCase="'copy-link'" width="16" height="16" 
+        <svg *ngSwitchCase="'view'" ibmIconView [size]="options.size || '16'"  (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'view-off'" ibmIconViewOff [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'information'" ibmIconInformation [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'checkmark-filled'" ibmIconCheckmarkFilled [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'chevron-up'" ibmIconChevronUp [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'chevron-down'" ibmIconChevronDown [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'chevron-left'" ibmIconChevronLeft [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'chevron-right'" ibmIconChevronRight [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'arrow-left'" ibmIconArrowLeft [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'arrow-right'" ibmIconArrowRight [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'home'" ibmIconHome [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'settings'" ibmIconSettings [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'user'" ibmIconUserFilled [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'data-structured'" attr-desc='session' ibmIconDataStructured [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'data-1'" ibmIconData_1 attr-desc='group' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'checkmark'" ibmIconCheckmark [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'radio-button'" ibmIconRadioButton attr-desc='circle' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'collaborate'" ibmIconCollaborate attr-desc='login' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'play-outline'" ibmIconPlayOutline attr-desc='video' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'close'" ibmIconClose [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'upload'" ibmIconUpload [size]="options.size || '16'" (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'delete'" ibmIconDelete [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'unlocked'" ibmIconUnlocked [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'download'" ibmIconDownload [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'folder'" ibmIconFolder [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'folder-add'" ibmIconFolderAdd [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'add'" ibmIconAdd [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'subtract-alt'" ibmIconSubtractAlt [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'document-export'" ibmIconDocumentExport [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'document-blank'" ibmIconDocumentBlank [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'renew'" ibmIconRenew [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'terminal'" ibmIconTerminal [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'edit'" ibmIconEdit [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'undo'" ibmIconUndo [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'y-axis'" attr-desc='YAxis' ibmIconYAxis [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'caret-up'" ibmIconCaretUp attr-desc='group' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'caret-down'" ibmIconCaretDown [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'caret-right'" ibmIconCaretRight [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'settings-adjust'" ibmIconSettingsAdjust attr-desc='SettingsAdjust' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'visual-recognition'" ibmIconVisualRecognition attr-desc='visual-recognition' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'warning-filled'" ibmIconWarningFilled attr-desc='WarningFilled' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'warning'" ibmIconWarning [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'document'" ibmIconDocument [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'copy'" ibmIconCopy [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'error-filled'" ibmIconErrorFilled [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
+        <svg *ngSwitchCase="'copy-link'" (click)="click($event)" width="16" height="16" 
             viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
             <path d="M2,23V3h7.2l3.4,3.4L13.2,7H26v7.6h2V7c0-1.1-0.9-2-2-2H14l-3.4-3.4C10.2,1.2,9.7,1,9.2,1H2C0.9,1,0,1.9,0,3v20
                 c0,1.1,0.9,2,2,2h12v-2H2z"/>

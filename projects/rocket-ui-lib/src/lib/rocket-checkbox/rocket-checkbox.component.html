@@ -1,6 +1,6 @@
 <ibm-checkbox
     [disabled]="options.disabled"
-    [checked]="options.checked.toString() === 'true'"
+    [checked]="options.checked == null ? 'false' : options.checked.toString() === 'true'"
     [value]='options.value'
     [id]="(id || ('rocket-checkbox-' + (options.text || options.label || ''))) + '-id'"
     (change)="change($event)">

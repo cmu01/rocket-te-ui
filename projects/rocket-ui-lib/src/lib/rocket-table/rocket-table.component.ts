@@ -307,7 +307,7 @@ export class RocketTableComponent implements OnInit {
   }
 
   exports() {
-    return this.options.export(this.filter);
+    return this.options.export(this.options.filter);
   }
 
   @HostListener('window:resize', ['$event'])

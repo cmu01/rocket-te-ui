@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'rocket-icon',
@@ -11,10 +11,17 @@ export class RocketIconComponent implements OnInit {
     isCenter: true
   };
   @Input() type = '';
+  @Output() onClick = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  click(e) {
+    if(this.onClick) {
+      this.onClick.emit(e);
+    }
   }
 
   setColor() {
