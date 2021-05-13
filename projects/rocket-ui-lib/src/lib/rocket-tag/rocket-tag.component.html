@@ -1,0 +1,2 @@
+<ibm-tag *ngIf="!options.filterMode" [type]="options.type">{{options.label}}</ibm-tag>
+<ibm-tag-filter *ngIf="options.filterMode" (close)="close($event)">{{options.label}}</ibm-tag-filter>

@@ -184,7 +184,7 @@ export class RocketTableComponent implements OnInit {
     const pattNum = /^\d+$/;
     if(filter != null) {
       data = data.filter(d => {
-        if(this.options.fillAllData) {
+        if(this.options.filterAllData) {
           return Object.keys(d).findIndex(k => {
             return (d[k] || '').toString().toLowerCase().includes(filter.toLowerCase())}) > -1;
         } 

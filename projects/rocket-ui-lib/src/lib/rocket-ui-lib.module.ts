@@ -15,10 +15,10 @@ import { RocketModalComponent } from './rocket-modal/rocket-modal.component';
 import { RocketNotificationComponent } from './rocket-notification/rocket-notification.component';
 import { CheckmarkFilledModule, InformationModule, ViewModule, ViewOffModule, ChevronDownModule, ChevronUpModule,ChevronRightModule,
     ArrowLeftModule, ArrowRightModule, HomeModule, SettingsModule, UserFilledModule, PlayOutlineModule, ChevronLeftModule,
-    DataStructuredModule, Data_1Module, CheckmarkModule, CloseModule, RadioButtonModule, CollaborateModule, UploadModule,
+    DataStructuredModule, Data_1Module, CheckmarkModule, CloseModule, RadioButtonModule, CollaborateModule, UploadModule, MisuseModule,
     DeleteModule, UnlockedModule, DownloadModule, FolderModule, FolderAddModule, AddModule, SubtractAltModule,DocumentExportModule,
     RenewModule, TerminalModule, EditModule, UndoModule, YAxisModule, CaretUpModule, CaretDownModule,CaretRightModule, SettingsAdjustModule, 
-    VisualRecognitionModule, WarningFilledModule, WarningModule, DocumentModule, CopyModule, ErrorFilledModule, DocumentBlankModule
+    VisualRecognitionModule, WarningFilledModule, WarningModule, DocumentModule, CopyModule, ErrorFilledModule, DocumentBlankModule, WarningAltFilledModule
 } from '@carbon/icons-angular';
 import { RocketTooltipComponent } from './rocket-tooltip/rocket-tooltip.component';
 import { RocketRadioComponent } from './rocket-radio/rocket-radio.component';
@@ -34,8 +34,10 @@ import { RocketFileUploaderComponent } from './rocket-file-uploader/rocket-file-
 import { RocketTextDirective } from './rocket-text.directive';
 import { RocketLabelDirective } from './rocket-label.directive';
 import { RocketLoadingComponent } from './rocket-loading/rocket-loading.component';
+import { RocketOverflowComponent } from './rocket-overflow/rocket-overflow.component';
 import { RocketPlaceholderComponent } from './rocket-placeholder/rocket-placeholder.component';
 import { RocketTabsComponent } from './rocket-tabs/rocket-tabs.component';
+import { RocketTagComponent } from './rocket-tag/rocket-tag.component';
 import { RocketTreeComponent } from './rocket-tree/rocket-tree.component';
 import { RocketTabsNavDirective } from './rocket-tabs/rocket-tabs-nav.directive';
 import { RocketTabsUlDirective } from './rocket-tabs/rocket-tabs-ul.directive';
@@ -62,6 +64,7 @@ import { RocketTabsActiveDirective } from './rocket-tabs/rocket-tabs-active.dire
         RocketTextAreaComponent,
         RocketSearchComponent,
         RocketIconComponent,
+        RocketOverflowComponent,
         RocketTextDirective,
         RocketLabelDirective,
         RocketLoadingComponent,
@@ -74,7 +77,8 @@ import { RocketTabsActiveDirective } from './rocket-tabs/rocket-tabs-active.dire
         RocketTabsLinkDirective,
         RocketTabsActiveDirective,
         RocketCodeSnipetComponent,
-        RocketTreeComponent
+        RocketTreeComponent,
+        RocketTagComponent
     ],
     imports: [
         CommonModule,
@@ -95,6 +99,7 @@ import { RocketTabsActiveDirective } from './rocket-tabs/rocket-tabs-active.dire
         TabsModule,
         ModalModule,
         NotificationModule,
+        TagModule,
         SelectModule,
         CheckboxModule,
         CheckboxModule,
@@ -126,10 +131,10 @@ import { RocketTabsActiveDirective } from './rocket-tabs/rocket-tabs-active.dire
         CloseModule,
         BreadcrumbModule,
         UploadModule,
-        ErrorFilledModule,
+        ErrorFilledModule, MisuseModule,
         DeleteModule, UnlockedModule, DownloadModule, FolderModule, FolderAddModule, AddModule, SubtractAltModule,DocumentExportModule,
         RenewModule, TerminalModule, EditModule, UndoModule, YAxisModule, CaretUpModule, CaretDownModule, CaretRightModule, SettingsAdjustModule, 
-        VisualRecognitionModule, WarningFilledModule, WarningModule, DocumentModule, CopyModule, DocumentBlankModule
+        VisualRecognitionModule, WarningFilledModule, WarningModule, DocumentModule, CopyModule, DocumentBlankModule, WarningAltFilledModule
     ],
     exports: [
         RocketSelectComponent,
@@ -143,6 +148,7 @@ import { RocketTabsActiveDirective } from './rocket-tabs/rocket-tabs-active.dire
         DropdownModule,
         ButtonModule,
         SearchModule,
+        TagModule,
         RocketAccordionComponent,
         ProgressIndicatorModule,
         CodeSnippetModule,
@@ -155,6 +161,7 @@ import { RocketTabsActiveDirective } from './rocket-tabs/rocket-tabs-active.dire
         InputModule,
         CheckmarkFilledModule,
         RocketButtonComponent,
+        RocketOverflowComponent,
         AccordionModule,
         PlaceholderModule,
         RocketTextComponent,
@@ -162,6 +169,7 @@ import { RocketTabsActiveDirective } from './rocket-tabs/rocket-tabs-active.dire
         RocketTableComponent,
         RocketNotificationComponent,
         RocketModalComponent,
+        RocketTagComponent,
         ViewModule,
         TabsModule,
         ViewOffModule,
@@ -205,10 +213,10 @@ import { RocketTabsActiveDirective } from './rocket-tabs/rocket-tabs-active.dire
         RocketTabsUlDirective,
         RocketTabsLiDirective,
         RocketTabsLinkDirective,
-        RocketTabsActiveDirective, ErrorFilledModule,
+        RocketTabsActiveDirective, ErrorFilledModule, MisuseModule,
         DeleteModule, UnlockedModule, DownloadModule, FolderModule, FolderAddModule, AddModule, SubtractAltModule,DocumentExportModule,
         RenewModule, TerminalModule, EditModule, UndoModule, YAxisModule, CaretUpModule, CaretDownModule, CaretRightModule, SettingsAdjustModule, 
-        VisualRecognitionModule, WarningFilledModule, WarningModule, DocumentModule, CopyModule, DocumentBlankModule
+        VisualRecognitionModule, WarningFilledModule, WarningModule, DocumentModule, CopyModule, DocumentBlankModule, WarningAltFilledModule
     ]
 })
 export class RocketUiLibModule {}
