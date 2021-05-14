@@ -1,0 +1,6 @@
+<ibm-content-switcher
+    [id]="(id || ('rocket-content-switcher-' + options.title)) + '-id'"
+    [theme]="options.theme || 'dark'"
+    (selected)="select($event)">
+    <button ibmContentOption *ngFor="let data of options.data" name="{{data.value}}">{{data.text}}</button>
+</ibm-content-switcher>

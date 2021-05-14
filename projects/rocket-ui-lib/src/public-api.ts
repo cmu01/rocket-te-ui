@@ -36,4 +36,5 @@ export * from './lib/rocket-text.directive';
 export * from './lib/rocket-label.directive';
 export * from './lib/rocket-loading/rocket-loading.component';
 export * from './lib/rocket-placeholder/rocket-placeholder.component';
+export * from './lib/rocket-content-switcher/rocket-content-switcher.component';
 export * from 'carbon-components-angular';

@@ -1,2 +1,19 @@
-<ibm-tag *ngIf="!options.filterMode" [type]="options.type">{{options.label}}</ibm-tag>
-<ibm-tag-filter *ngIf="options.filterMode" (close)="close($event)">{{options.label}}</ibm-tag-filter>
+<ibm-tag *ngIf="!options.filterMode && !options.filterMode" [type]="options.type">{{options.label}}</ibm-tag>
+<ibm-tag-filter *ngIf="options.filterMode1" (close)="close($event)">{{options.label}}</ibm-tag-filter>
+<div *ngIf="options.filterMode" [id]="id || options.label + '-rocket-tag-id'" class="bx--tag bx--tag--filter">
+    <span class="bx--tag__label" [attr.title]="options.title || null">
+      <ng-content></ng-content>
+    </span>
+    <div *ngIf="options.done"
+      class="bx--tag__close-icon tag-status">
+      <svg class='rocket-tag-done-icon' ibmIconCheckmark ibmIcon="checkmark" size="16"></svg>
+    </div>
+    <button
+        class="bx--tag__close-icon"
+        (click)="close($event)"
+        [disabled]="options.disabled"
+        [title]="options.closeButtonLabel || ''">
+        <span class="bx--visually-hidden">{{options.closeButtonLabel}}</span>
+      <svg ibmIcon="close" ibmIconClose size="16"></svg>
+   </button>
+</div>

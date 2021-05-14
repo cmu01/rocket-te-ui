@@ -7,6 +7,7 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } fro
   encapsulation: ViewEncapsulation.None
 })
 export class RocketTagComponent implements OnInit {
+  @Input() id: any = {};
   @Input() options: any = {};
   @Output() onClose = new EventEmitter();
 

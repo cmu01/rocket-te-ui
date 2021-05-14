@@ -3,7 +3,7 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputModule, ButtonModule, SliderModule, SearchModule, TableModule, ProgressIndicatorModule, ToggleModule, FileUploaderModule, 
      PaginationModule, DialogModule, ModalModule, RadioModule, AccordionModule ,NumberModule,DropdownModule,SelectModule,TagModule, CheckboxModule, 
-     NotificationModule, PlaceholderModule, LoadingModule, BreadcrumbModule, TabsModule, CodeSnippetModule
+     NotificationModule, PlaceholderModule, LoadingModule, BreadcrumbModule, TabsModule, CodeSnippetModule, ContentSwitcherModule
     } from 'carbon-components-angular';
 import { RocketSelectComponent } from './rocket-select/rocket-select.component';
 import { RocketButtonComponent } from './rocket-button/rocket-button.component';
@@ -44,6 +44,7 @@ import { RocketTabsUlDirective } from './rocket-tabs/rocket-tabs-ul.directive';
 import { RocketTabsLiDirective } from './rocket-tabs/rocket-tabs-li.directive';
 import { RocketTabsLinkDirective } from './rocket-tabs/rocket-tabs-link.directive';
 import { RocketTabsActiveDirective } from './rocket-tabs/rocket-tabs-active.directive';
+import { RocketContentSwitcherComponent } from './rocket-content-switcher/rocket-content-switcher.component';
 
 @NgModule({
     declarations: [
@@ -78,7 +79,8 @@ import { RocketTabsActiveDirective } from './rocket-tabs/rocket-tabs-active.dire
         RocketTabsActiveDirective,
         RocketCodeSnipetComponent,
         RocketTreeComponent,
-        RocketTagComponent
+        RocketTagComponent,
+        RocketContentSwitcherComponent
     ],
     imports: [
         CommonModule,
@@ -131,7 +133,7 @@ import { RocketTabsActiveDirective } from './rocket-tabs/rocket-tabs-active.dire
         CloseModule,
         BreadcrumbModule,
         UploadModule,
-        ErrorFilledModule, MisuseModule,
+        ErrorFilledModule, MisuseModule, ContentSwitcherModule,
         DeleteModule, UnlockedModule, DownloadModule, FolderModule, FolderAddModule, AddModule, SubtractAltModule,DocumentExportModule,
         RenewModule, TerminalModule, EditModule, UndoModule, YAxisModule, CaretUpModule, CaretDownModule, CaretRightModule, SettingsAdjustModule, 
         VisualRecognitionModule, WarningFilledModule, WarningModule, DocumentModule, CopyModule, DocumentBlankModule, WarningAltFilledModule
@@ -149,6 +151,7 @@ import { RocketTabsActiveDirective } from './rocket-tabs/rocket-tabs-active.dire
         ButtonModule,
         SearchModule,
         TagModule,
+        RocketContentSwitcherComponent,
         RocketAccordionComponent,
         ProgressIndicatorModule,
         CodeSnippetModule,
@@ -213,7 +216,7 @@ import { RocketTabsActiveDirective } from './rocket-tabs/rocket-tabs-active.dire
         RocketTabsUlDirective,
         RocketTabsLiDirective,
         RocketTabsLinkDirective,
-        RocketTabsActiveDirective, ErrorFilledModule, MisuseModule,
+        RocketTabsActiveDirective, ErrorFilledModule, MisuseModule, ContentSwitcherModule,
         DeleteModule, UnlockedModule, DownloadModule, FolderModule, FolderAddModule, AddModule, SubtractAltModule,DocumentExportModule,
         RenewModule, TerminalModule, EditModule, UndoModule, YAxisModule, CaretUpModule, CaretDownModule, CaretRightModule, SettingsAdjustModule, 
         VisualRecognitionModule, WarningFilledModule, WarningModule, DocumentModule, CopyModule, DocumentBlankModule, WarningAltFilledModule
