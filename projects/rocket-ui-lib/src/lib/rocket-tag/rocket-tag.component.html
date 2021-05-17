@@ -4,9 +4,13 @@
     <span class="bx--tag__label" [attr.title]="options.title || null">
       <ng-content></ng-content>
     </span>
-    <div *ngIf="options.done"
+    <div *ngIf="options.done" [title]="options.succTitle"
       class="bx--tag__close-icon tag-status">
       <svg class='rocket-tag-done-icon' ibmIconCheckmark ibmIcon="checkmark" size="16"></svg>
+    </div>
+    <div *ngIf="options.failed" [title]="options.failedTitle"
+      class="bx--tag__close-icon tag-status-failed">
+      <svg class='rocket-tag-done-icon' ibmIconInformation ibmIcon="information" size="16"></svg>
     </div>
     <button
         class="bx--tag__close-icon"
