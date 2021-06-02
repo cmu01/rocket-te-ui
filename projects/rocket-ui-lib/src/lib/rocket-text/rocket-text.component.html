@@ -12,6 +12,7 @@
      [placeholder]="options.placeholder || ''"
      [title]="options.title || ''"
      (blue)="onBlue($event)"
+     (focus)="focus($event)"
      (ngModelChange)="onInputChange($event)"
      [disabled]="options.disabled" #rocketText="ngModel">
      <ng-content></ng-content>

@@ -6,6 +6,7 @@
         [buttonType]="options.buttonType || 'primary'"
         [accept]="options.accept"
         [(files)]="options.files"
+        [multiple]="options.multiple"
         [(ngModel)]="options.files"
         (filesChange)="upload($event)">
     </ibm-file-uploader>

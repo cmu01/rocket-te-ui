@@ -67,6 +67,7 @@ export class RocketTableComponent implements OnInit {
   orgData = [];
   isInit = true;
   filter = '';
+  curData: Array<any> = [];
   PaginationTimer: any;
   actionTimer: any;
   itemsPerPageOptions: number[] = [15, 20, 30, 40, 50];
@@ -111,16 +112,24 @@ export class RocketTableComponent implements OnInit {
 
   selectRow(index: number) {
     const selcts = this.table.model.rowsSelected;
-    const data = this.data.rows
+    const data = this.getCurData()
       .filter((d,i) => selcts[i]);
     this.selectList.emit(data);
   }
 
   deselectRow(index: number) {
     const selcts = this.table.model.rowsSelected;
-    const data = this.data.rows
+    const data = this.getCurData()
       .filter((d,i) => selcts[i]);
     this.selectList.emit(data);
+  }
+
+  getCurData() {
+    const page = this.table.model.currentPage;
+    const start = this.table.model.pageLength * (page - 1);
+    const end = this.table.model.pageLength * page;
+
+    return this.curData.slice(start, end);
   }
 
   getSelectedData() {
@@ -188,10 +197,11 @@ export class RocketTableComponent implements OnInit {
           return Object.keys(d).findIndex(k => {
             return (d[k] || '').toString().toLowerCase().includes(filter.toLowerCase())}) > -1;
         } 
-        return d[headers[0]].toLowerCase().includes(filter.toLowerCase());
+        return (d[headers[0]] || '').toLowerCase().includes(filter.toLowerCase());
       });
     }
     this.orgData = [];
+    this.curData = JSON.parse(JSON.stringify(data));
 
     data.forEach(d => {
       const keys = Object.keys(d);
@@ -244,6 +254,7 @@ export class RocketTableComponent implements OnInit {
   setStatus(d, m, item) {
     if(m.toLowerCase() === 'action') {
       item.data = d;
+      item.actions = item.actions;
       item.template = this.overflowMenuItemTemplate;
       return;
     }

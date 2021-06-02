@@ -14,9 +14,9 @@
       </button>
     </ibm-table-toolbar-content>
   
-    <ng-template #overflowMenuItemTemplate let-data="data">
+    <ng-template #overflowMenuItemTemplate let-data="data" let-actions="actions">
       <ibm-overflow-menu id='table-overflow' [placement]="options.placement || 'bottom'" *ngIf="!options.showRemove" title=''>
-          <ibm-overflow-menu-option class='relative' *ngFor="let action of options.actions" (selected)="selected(action, data)">
+          <ibm-overflow-menu-option class='relative' *ngFor="let action of (actions || options.actions)" (selected)="selected(action, data)" [disabled]="action.disabled">
             <div [ngClass]="{'text-bold': action.value === 'delete'}">{{action.text}}</div>
           </ibm-overflow-menu-option>
       </ibm-overflow-menu>

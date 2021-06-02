@@ -11,6 +11,7 @@ export class RocketTextComponent implements OnInit {
   @Input() tooltip: any = {};
   @Input() id: string;
   @Output() onChange = new EventEmitter();
+  @Output() onFocus = new EventEmitter();
 
   constructor() { 
     
@@ -28,6 +29,12 @@ export class RocketTextComponent implements OnInit {
 
   onBlue($event) {
     $event.stopPropagation();
+  }
+
+  focus($event) {
+    if(this.onFocus) {
+      this.onFocus.emit($event);
+    }
   }
 
 }
