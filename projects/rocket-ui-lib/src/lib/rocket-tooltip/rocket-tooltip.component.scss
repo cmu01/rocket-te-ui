@@ -26,7 +26,7 @@ rocket-tooltip > ibm-placeholder > ibm-tooltip {
     display: block !important;
 }
 
-rocket-tooltip ibm-tooltip-icon ibm-icon-information {
+rocket-tooltip rocket-icon {
     svg {
         margin-top: .05rem;
     }

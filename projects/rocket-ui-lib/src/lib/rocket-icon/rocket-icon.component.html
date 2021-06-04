@@ -1,53 +1,401 @@
 <div [ngClass]="{'rocket-icon': options.isCenter}" class='rocket-icon-inline'>
     <ng-container *ngIf='!options.isImg' [ngSwitch]="type"> 
-        <svg *ngSwitchCase="'view'" ibmIconView [size]="options.size || '16'"  (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'view-off'" ibmIconViewOff [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'information'" ibmIconInformation [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'checkmark-filled'" ibmIconCheckmarkFilled [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'chevron-up'" ibmIconChevronUp [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'chevron-down'" ibmIconChevronDown [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'chevron-left'" ibmIconChevronLeft [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'chevron-right'" ibmIconChevronRight [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'arrow-left'" ibmIconArrowLeft [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'arrow-right'" ibmIconArrowRight [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'home'" ibmIconHome [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'settings'" ibmIconSettings [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'user'" ibmIconUserFilled [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'data-structured'" attr-desc='session' ibmIconDataStructured [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'data-1'" ibmIconData_1 attr-desc='group' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'checkmark'" ibmIconCheckmark [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'radio-button'" ibmIconRadioButton attr-desc='circle' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'collaborate'" ibmIconCollaborate attr-desc='login' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'play-outline'" ibmIconPlayOutline attr-desc='video' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'close'" ibmIconClose [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'upload'" ibmIconUpload [size]="options.size || '16'" (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'delete'" ibmIconDelete [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'unlocked'" ibmIconUnlocked [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'download'" ibmIconDownload [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'folder'" ibmIconFolder [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'folder-add'" ibmIconFolderAdd [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'add'" ibmIconAdd [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'subtract-alt'" ibmIconSubtractAlt [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'document-export'" ibmIconDocumentExport [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'document-blank'" ibmIconDocumentBlank [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'renew'" ibmIconRenew [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'terminal'" ibmIconTerminal [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'edit'" ibmIconEdit [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'undo'" ibmIconUndo [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'y-axis'" attr-desc='YAxis' ibmIconYAxis [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'caret-up'" ibmIconCaretUp attr-desc='group' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'caret-down'" ibmIconCaretDown [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'caret-right'" ibmIconCaretRight [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'settings-adjust'" ibmIconSettingsAdjust attr-desc='SettingsAdjust' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'visual-recognition'" ibmIconVisualRecognition attr-desc='visual-recognition' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'warning-filled'" ibmIconWarningFilled attr-desc='WarningFilled' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'warning-alt-filled'" ibmIconWarningAltFilled attr-desc='WarningAltFilled' [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'warning'" ibmIconWarning [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'document'" ibmIconDocument [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'copy'" ibmIconCopy [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'error-filled'" ibmIconErrorFilled [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'misuse'" ibmIconMisuse [size]="options.size || '16'" [ngStyle]='setColor()' (click)="click($event)"></svg>
-        <svg *ngSwitchCase="'minus'" ibmIconSubtractAlt [size]="options.size || '16'" [ngStyle]='setColor()'></svg>
+        <svg *ngSwitchCase="'view'" (click)="click($event)" [ngStyle]='setColor()' viewBox="0 0 32 32">
+            <defs>
+                <style>.cls-1{fill:none;}</style>
+            </defs>
+            <path d="M30.94,15.66A16.69,16.69,0,0,0,16,5,16.69,16.69,0,0,0,1.06,15.66a1,1,0,0,0,0,.68A16.69,16.69,0,0,0,16,27,16.69,16.69,0,0,0,30.94,16.34,1,1,0,0,0,30.94,15.66ZM16,25c-5.3,0-10.9-3.93-12.93-9C5.1,10.93,10.7,7,16,7s10.9,3.93,12.93,9C26.9,21.07,21.3,25,16,25Z" transform="translate(0 0)"/>
+            <path d="M16,10a6,6,0,1,0,6,6A6,6,0,0,0,16,10Zm0,10a4,4,0,1,1,4-4A4,4,0,0,1,16,20Z" transform="translate(0 0)"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>
+        <svg *ngSwitchCase="'view-off'"  [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <path d="M5.24,22.51l1.43-1.42A14.06,14.06,0,0,1,3.07,16C5.1,10.93,10.7,7,16,7a12.38,12.38,0,0,1,4,.72l1.55-1.56A14.72,14.72,0,0,0,16,5,16.69,16.69,0,0,0,1.06,15.66a1,1,0,0,0,0,.68A16,16,0,0,0,5.24,22.51Z"/>
+            <path d="M12,15.73a4,4,0,0,1,3.7-3.7l1.81-1.82a6,6,0,0,0-7.33,7.33Z"/>
+            <path d="M30.94,15.66A16.4,16.4,0,0,0,25.2,8.22L30,3.41,28.59,2,2,28.59,3.41,30l5.1-5.1A15.29,15.29,0,0,0,16,27,16.69,16.69,0,0,0,30.94,16.34,1,1,0,0,0,30.94,15.66ZM20,16a4,4,0,0,1-6,3.44L19.44,14A4,4,0,0,1,20,16Zm-4,9a13.05,13.05,0,0,1-6-1.58l2.54-2.54a6,6,0,0,0,8.35-8.35l2.87-2.87A14.54,14.54,0,0,1,28.93,16C26.9,21.07,21.3,25,16,25Z"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>
+        <svg *ngSwitchCase="'information'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                }
+              </style>
+            </defs>
+            <polygon points="17 22 17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22"/>
+            <path d="M16,8a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,8Z"/>
+            <path d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'checkmark-filled'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs>
+                <style>
+                .cls-1 {
+                    fill: none;
+                }
+                </style>
+            </defs>
+            <path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM14,21.5908l-5-5L10.5906,15,14,18.4092,21.41,11l1.5957,1.5859Z"/>
+            <polygon id="inner-path" class="cls-1" points="14 21.591 9 16.591 10.591 15 14 18.409 21.41 11 23.005 12.585 14 21.591"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'chevron-up'" [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+            viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+            </style>
+            <polygon points="16,10 26,20 24.6,21.4 16,12.8 7.4,21.4 6,20 "/>
+            <rect id="_x3C_Transparent_Rectangle_x3E_" class="st0" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'chevron-down'" [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+            viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+            </style>
+            <polygon points="16,22 6,12 7.4,10.6 16,19.2 24.6,10.6 26,12 "/>
+            <rect id="_x3C_Transparent_Rectangle_x3E_" class="st0" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'chevron-left'"  [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+              viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+            </style>
+            <polygon points="10,16 20,6 21.4,7.4 12.8,16 21.4,24.6 20,26 "/>
+            <rect id="_x3C_Transparent_Rectangle_x3E_" class="st0" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'chevron-right'" [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+                viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+            </style>
+            <polygon points="22,16 12,26 10.6,24.6 19.2,16 10.6,7.4 12,6 "/>
+            <rect id="_x3C_Transparent_Rectangle_x3E_" class="st0" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'arrow-left'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                }
+              </style>
+            </defs>
+            <polygon points="14 26 15.41 24.59 7.83 17 28 17 28 15 7.83 15 15.41 7.41 14 6 4 16 14 26"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'arrow-right'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                }
+              </style>
+            </defs>
+            <polygon points="18 6 16.57 7.393 24.15 15 4 15 4 17 24.15 17 16.57 24.573 18 26 28 16 18 6"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'home'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <path d="M16.61,2.21a1,1,0,0,0-1.24,0L1,13.42,2.24,15,4,13.62V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V13.63L29.76,15,31,13.43ZM18,26H14V18h4Zm2,0h0V18a2,2,0,0,0-2-2H14a2,2,0,0,0-2,2v8H6V12.06L16,4.27l10,7.8V26Z" transform="translate(0 0)"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>
+        <svg *ngSwitchCase="'settings'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <path d="M27,16.76c0-.25,0-.5,0-.76s0-.51,0-.77l1.92-1.68A2,2,0,0,0,29.3,11L26.94,7a2,2,0,0,0-1.73-1,2,2,0,0,0-.64.1l-2.43.82a11.35,11.35,0,0,0-1.31-.75l-.51-2.52a2,2,0,0,0-2-1.61H13.64a2,2,0,0,0-2,1.61l-.51,2.52a11.48,11.48,0,0,0-1.32.75L7.43,6.06A2,2,0,0,0,6.79,6,2,2,0,0,0,5.06,7L2.7,11a2,2,0,0,0,.41,2.51L5,15.24c0,.25,0,.5,0,.76s0,.51,0,.77L3.11,18.45A2,2,0,0,0,2.7,21L5.06,25a2,2,0,0,0,1.73,1,2,2,0,0,0,.64-.1l2.43-.82a11.35,11.35,0,0,0,1.31.75l.51,2.52a2,2,0,0,0,2,1.61h4.72a2,2,0,0,0,2-1.61l.51-2.52a11.48,11.48,0,0,0,1.32-.75l2.42.82a2,2,0,0,0,.64.1,2,2,0,0,0,1.73-1L29.3,21a2,2,0,0,0-.41-2.51ZM25.21,24l-3.43-1.16a8.86,8.86,0,0,1-2.71,1.57L18.36,28H13.64l-.71-3.55a9.36,9.36,0,0,1-2.7-1.57L6.79,24,4.43,20l2.72-2.4a8.9,8.9,0,0,1,0-3.13L4.43,12,6.79,8l3.43,1.16a8.86,8.86,0,0,1,2.71-1.57L13.64,4h4.72l.71,3.55a9.36,9.36,0,0,1,2.7,1.57L25.21,8,27.57,12l-2.72,2.4a8.9,8.9,0,0,1,0,3.13L27.57,20Z" transform="translate(0 0)"/>
+            <path d="M16,22a6,6,0,1,1,6-6A5.94,5.94,0,0,1,16,22Zm0-10a3.91,3.91,0,0,0-4,4,3.91,3.91,0,0,0,4,4,3.91,3.91,0,0,0,4-4A3.91,3.91,0,0,0,16,12Z" transform="translate(0 0)"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>
+        <svg *ngSwitchCase="'user'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <path d="M6,30H26V25a7.0082,7.0082,0,0,0-7-7H13a7.0082,7.0082,0,0,0-7,7Z" transform="translate(0 0)"/>
+            <path d="M9,9a7,7,0,1,0,7-7A7,7,0,0,0,9,9Z" transform="translate(0 0)"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>
+        <svg *ngSwitchCase="'data-structured'" attr-desc='session'  [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs><circle cx="9" cy="7" r="1"/>
+            <path d="M27,22.14V18a2,2,0,0,0-2-2H17V12h9a2,2,0,0,0,2-2V4a2,2,0,0,0-2-2H6A2,2,0,0,0,4,4v6a2,2,0,0,0,2,2h9v4H7a2,2,0,0,0-2,2v4.14a4,4,0,1,0,2,0V18h8v4H12v8h8V22H17V18h8v4.14a4,4,0,1,0,2,0ZM8,26a2,2,0,1,1-2-2A2,2,0,0,1,8,26Zm10-2v4H14V24ZM6,10V4H26v6ZM26,28a2,2,0,1,1,2-2A2,2,0,0,1,26,28Z" transform="translate(0)"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>
+        <svg *ngSwitchCase="'data-1'" attr-desc='group' [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <rect x="15" y="6" width="13" height="2"/><rect x="15" y="24" width="13" height="2"/>
+            <rect x="4" y="15" width="13" height="2"/>
+            <path d="M7,11a4,4,0,1,1,4-4A4,4,0,0,1,7,11ZM7,5A2,2,0,1,0,9,7,2,2,0,0,0,7,5Z" transform="translate(0 0)"/>
+            <path d="M7,29a4,4,0,1,1,4-4A4,4,0,0,1,7,29Zm0-6a2,2,0,1,0,2,2A2,2,0,0,0,7,23Z" transform="translate(0 0)"/>
+            <path d="M25,20a4,4,0,1,1,4-4A4,4,0,0,1,25,20Zm0-6a2,2,0,1,0,2,2A2,2,0,0,0,25,14Z" transform="translate(0 0)"/>
+            <g id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;"><rect class="cls-1"/></g>
+        </svg>
+        <svg *ngSwitchCase="'checkmark'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                }
+              </style>
+            </defs>
+            <polygon points="13 24 4 15 5.414 13.586 13 21.171 26.586 7.586 28 9 13 24"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+          </svg>
+        <svg *ngSwitchCase="'radio-button'" attr-desc='circle' [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>  
+        <svg *ngSwitchCase="'collaborate'" attr-desc='login' [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <path d="M6,21V20H4v1a7,7,0,0,0,7,7h3V26H11A5,5,0,0,1,6,21Z" transform="translate(0)"/>
+            <path d="M24,11v1h2V11a7,7,0,0,0-7-7H16V6h3A5,5,0,0,1,24,11Z" transform="translate(0)"/>
+            <path d="M11,11H5a3,3,0,0,0-3,3v2H4V14a1,1,0,0,1,1-1h6a1,1,0,0,1,1,1v2h2V14A3,3,0,0,0,11,11Z" transform="translate(0)"/>
+            <path d="M8,10A4,4,0,1,0,4,6,4,4,0,0,0,8,10ZM8,4A2,2,0,1,1,6,6,2,2,0,0,1,8,4Z" transform="translate(0)"/>
+            <path d="M27,25H21a3,3,0,0,0-3,3v2h2V28a1,1,0,0,1,1-1h6a1,1,0,0,1,1,1v2h2V28A3,3,0,0,0,27,25Z" transform="translate(0)"/>
+            <path d="M20,20a4,4,0,1,0,4-4A4,4,0,0,0,20,20Zm6,0a2,2,0,1,1-2-2A2,2,0,0,1,26,20Z" transform="translate(0)"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>
+        <svg *ngSwitchCase="'play-outline'" attr-desc='video' [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                }
+              </style>
+            </defs>
+            <path d="M11,23a1,1,0,0,1-1-1V10a1,1,0,0,1,1.4473-.8945l12,6a1,1,0,0,1,0,1.789l-12,6A1.001,1.001,0,0,1,11,23Zm1-11.3821v8.7642L20.7642,16Z"/>
+            <path d="M16,4A12,12,0,1,1,4,16,12,12,0,0,1,16,4m0-2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Z"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+          </svg>
+        <svg *ngSwitchCase="'close'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:#000000;}.cls-2{fill:none;}</style></defs>
+            <polygon class="cls-1" points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"/>
+            <rect class="cls-2"/>
+        </svg>  
+        <svg *ngSwitchCase="'upload'" (click)="click($event)" [ngStyle]='setColor()' viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                }
+              </style>
+            </defs>
+            <polygon points="6 18 7.41 19.41 15 11.83 15 30 17 30 17 11.83 24.59 19.41 26 18 16 8 6 18"/>
+            <path d="M6,8V4H26V8h2V4a2,2,0,0,0-2-2H6A2,2,0,0,0,4,4V8Z"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'delete'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <title>trash-can</title>
+            <rect x="12" y="12" width="2" height="12"/><rect x="18" y="12" width="2" height="12"/>
+            <path d="M4,6V8H6V28a2,2,0,0,0,2,2H24a2,2,0,0,0,2-2V8h2V6ZM8,28V8H24V28Z"/>
+            <rect x="12" y="2" width="8" height="2"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>  
+        <svg *ngSwitchCase="'unlocked'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <path d="M24,14H12V8a4,4,0,0,1,8,0h2A6,6,0,0,0,10,8v6H8a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H24a2,2,0,0,0,2-2V16A2,2,0,0,0,24,14Zm0,14H8V16H24Z"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>
+        <svg *ngSwitchCase="'download'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                }
+              </style>
+            </defs>
+            <path d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"/>
+            <polygon points="26 14 24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14"/>
+            <g id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;">
+              <rect class="cls-1" width="32" height="32"/>
+            </g>
+        </svg>
+        <svg *ngSwitchCase="'folder'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <path d="M11.17,6l3.42,3.41.58.59H28V26H4V6h    7.17m0-2H4A2,2,0,0,0,2,6V26a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2H16L12.59,4.59A2,2,0,0,0,11.17,4Z" transform="translate(0)"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'folder-add'" [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+             viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+            </style>
+            <polygon points="26,20 24,20 24,24 20,24 20,26 24,26 24,30 26,30 26,26 30,26 30,24 26,24 "/>
+            <path d="M28,8H16l-3.4-3.4C12.2,4.2,11.7,4,11.2,4H4C2.9,4,2,4.9,2,6v20c0,1.1,0.9,2,2,2h14v-2H4V6h7.2l3.4,3.4l0.6,0.6H28v8h2v-8
+                C30,8.9,29.1,8,28,8z"/>
+            <rect id="_Transparent_Rectangle_" class="st0" width="32" height="32"/>
+        </svg>
+       
+        <svg *ngSwitchCase="'add'" [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+               viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+            </style>
+            <polygon points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15 "/>
+            <rect class="st0" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'subtract-alt'" [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+                viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+            </style>
+            <path d="M16,4c6.6,0,12,5.4,12,12s-5.4,12-12,12S4,22.6,4,16S9.4,4,16,4 M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14
+                S23.7,2,16,2z"/>
+            <rect x="8" y="15" width="16" height="2"/>
+            <rect id="_Transparent_Rectangle_" class="st0" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'document-blank'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <path d="M25.7,9.3l-7-7A.9078.9078,0,0,0,18,2H8A2.0059,2.0059,0,0,0,6,4V28a2.0059,2.0059,0,0,0,2,2H24a2.0059,2.0059,0,0,0,2-2V10A.9078.9078,0,0,0,25.7,9.3ZM18,4.4,23.6,10H18ZM24,28H8V4h8v6a2.0059,2.0059,0,0,0,2,2h6Z"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>
+        <svg *ngSwitchCase="'document-export'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <polygon points="13 21 26.17 21 23.59 23.59 25 25 30 20 25 15 23.59 16.41 26.17 19 13 19 13 21"/>
+            <path d="M22,14V10a1,1,0,0,0-.29-.71l-7-7A1,1,0,0,0,14,2H4A2,2,0,0,0,2,4V28a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V26H20v2H4V4h8v6a2,2,0,0,0,2,2h6v2Zm-8-4V4.41L19.59,10Z"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>
+        <svg *ngSwitchCase="'renew'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <path d="M12,10H6.78A11,11,0,0,1,27,16h2A13,13,0,0,0,6,7.68V4H4v8h8Z"/>
+            <path d="M20,22h5.22A11,11,0,0,1,5,16H3a13,13,0,0,0,23,8.32V28h2V20H20Z"/>
+            <g id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;">
+                <rect class="cls-1"/>
+            </g>
+        </svg>
+        <svg *ngSwitchCase="'terminal'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <path d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4Zm0,2v4H6V6ZM6,26V12H26V26Z" transform="translate(0 0.01)"/>
+            <polygon points="10.76 16.18 13.58 19.01 10.76 21.84 12.17 23.25 16.41 19.01 12.17 14.77 10.76 16.18"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>
+        <svg *ngSwitchCase="'edit'" [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+               viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+            </style>
+            <rect x="2" y="26" width="28" height="2"/>
+            <path d="M25.4,9c0.8-0.8,0.8-2,0-2.8c0,0,0,0,0,0l-3.6-3.6c-0.8-0.8-2-0.8-2.8,0c0,0,0,0,0,0l-15,15V24h6.4L25.4,9z M20.4,4L24,7.6
+                l-3,3L17.4,7L20.4,4z M6,22v-3.6l10-10l3.6,3.6l-10,10H6z"/>
+            <rect id="_Transparent_Rectangle_" class="st0" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'undo'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                }
+              </style>
+            </defs>
+            <path d="M20,10H7.8149l3.5874-3.5859L10,5,4,11,10,17l1.4023-1.4146L7.8179,12H20a6,6,0,0,1,0,12H12v2h8a8,8,0,0,0,0-16Z"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'y-axis'" attr-desc='YAxis' [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <path d="M8,26V7.8281l2.5859,2.586L12,9,7,4,2,9l1.4141,1.4141L6,7.8281V26a2.0023,2.0023,0,0,0,2,2H28V26Z"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>  
+        <svg *ngSwitchCase="'caret-up'" attr-desc='group' [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+                viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+            </style>
+            <polygon points="8,20 16,10 24,20 "/>
+            <rect class="st0" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'caret-down'" [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+             viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+            </style>
+            <polygon points="24,12 16,22 8,12 "/>
+            <rect id="_Transparent_Rectangle_" class="st0" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'caret-right'"  [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+            viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+            </style>
+            <polygon points="12,8 22,16 12,24 "/>
+            <rect class="st0" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'settings-adjust'"  attr-desc='SettingsAdjust' [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+               viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+            </style>
+            <path d="M30,8h-4.1c-0.5-2.3-2.5-4-4.9-4s-4.4,1.7-4.9,4H2v2h14.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H30V8z M21,12c-1.7,0-3-1.3-3-3
+                s1.3-3,3-3s3,1.3,3,3S22.7,12,21,12z"/>
+            <path d="M2,24h4.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H30v-2H15.9c-0.5-2.3-2.5-4-4.9-4s-4.4,1.7-4.9,4H2V24z M11,20c1.7,0,3,1.3,3,3
+                s-1.3,3-3,3s-3-1.3-3-3S9.3,20,11,20z"/>
+            <rect id="_Transparent_Rectangle_" class="st0" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'warning-filled'" attr-desc='WarningFilled' [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+            viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+                .st1{opacity:0;fill-opacity:0;}
+            </style>
+            <rect id="Transparent_Rectangle" class="st0" width="32" height="32"/>
+            <path id="Compound_Path" d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14C30,8.3,23.7,2,16,2z M14.9,8h2.2v11h-2.2V8z M16,25
+                c-0.8,0-1.5-0.7-1.5-1.5S15.2,22,16,22c0.8,0,1.5,0.7,1.5,1.5S16.8,25,16,25z"/>
+            <path id="inner-path" class="st1" d="M17.5,23.5c0,0.8-0.7,1.5-1.5,1.5c-0.8,0-1.5-0.7-1.5-1.5S15.2,22,16,22
+                C16.8,22,17.5,22.7,17.5,23.5z M17.1,8h-2.2v11h2.2V8z"/>
+        </svg>
+        <svg *ngSwitchCase="'warning-alt-filled'" attr-desc='WarningAltFilled' [ngStyle]='setColor()' (click)="click($event)"  viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                }
+              </style>
+            </defs>
+            <path id="_inner-path_" data-name="&lt;inner-path&gt;" class="cls-1" d="M14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"/>
+            <path d="M29.8872,28.5386l-13-25a1,1,0,0,0-1.7744,0l-13,25A1,1,0,0,0,3,30H29a1,1,0,0,0,.8872-1.4614ZM14.875,11h2.25V21h-2.25ZM16,27a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,16,27Z"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'warning'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>warning</title><path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z" transform="translate(0 0)"/><rect x="15" y="8" width="2" height="11"/><path d="M16,22a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,22Z" transform="translate(0 0)"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/></svg>
+        <svg *ngSwitchCase="'document'" [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+            viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+            </style>
+            <title></title>
+            <path d="M25.7,9.3l-7-7C18.5,2.1,18.3,2,18,2H8C6.9,2,6,2.9,6,4v24c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V10C26,9.7,25.9,9.5,25.7,9.3
+                z M18,4.4l5.6,5.6H18V4.4z M24,28H8V4h8v6c0,1.1,0.9,2,2,2h6V28z"/>
+            <rect x="10" y="22" width="12" height="2"/>
+            <rect x="10" y="16" width="12" height="2"/>
+            <rect class="st0" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'copy'" [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs><style>.cls-1{fill:none;}</style></defs>
+            <title></title>
+            <path d="M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z" transform="translate(0)"/>
+            <path d="M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z" transform="translate(0)"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1"/>
+        </svg>
+        <svg *ngSwitchCase="'error-filled'"  [ngStyle]='setColor()' (click)="click($event)" viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                }
+              </style>
+            </defs>
+            <rect id="_inner-path_" data-name="&lt;inner-path&gt;" class="cls-1" x="14.9004" y="7.2004" width="2.1996" height="17.5994" transform="translate(-6.6275 16.0001) rotate(-45)"/>
+            <path d="M16,2A13.914,13.914,0,0,0,2,16,13.914,13.914,0,0,0,16,30,13.914,13.914,0,0,0,30,16,13.914,13.914,0,0,0,16,2Zm5.4449,21L9,10.5557,10.5557,9,23,21.4448Z"/>
+            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+        </svg>
+        <svg *ngSwitchCase="'misuse'" [ngStyle]='setColor()' (click)="click($event)" x="0px" y="0px"
+                width="32px" height="32px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+                .st1{opacity:0;fill-opacity:0;}
+            </style>
+            <rect id="_Transparent_Rectangle_" class="st0" width="32" height="32"/>
+            <path d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14S23.7,2,16,2z M21.4,23L16,17.6L10.6,23L9,21.4l5.4-5.4L9,10.6L10.6,9
+                l5.4,5.4L21.4,9l1.6,1.6L17.6,16l5.4,5.4L21.4,23z"/>
+            <path id="inner-path" class="st1" d="M21.4,23L16,17.6L10.6,23L9,21.4l5.4-5.4L9,10.6L10.6,9l5.4,5.4L21.4,9l1.6,1.6L17.6,16
+                l5.4,5.4L21.4,23z"/>
+        </svg>
+       
         <svg *ngSwitchCase="'copy-link'" (click)="click($event)" width="16" height="16" 
             viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
             <path d="M2,23V3h7.2l3.4,3.4L13.2,7H26v7.6h2V7c0-1.1-0.9-2-2-2H14l-3.4-3.4C10.2,1.2,9.7,1,9.2,1H2C0.9,1,0,1.9,0,3v20
@@ -116,7 +464,7 @@
                 V14.9z"/>
             <polygon points="13.3,25.1 16.1,27.9 13.3,30.8 14.7,32.2 18.9,27.9 14.7,23.7 "/>
             <polygon class="st0" points="18.4,37.6 14,37.6 14,22.8 29.6,22.8 29.6,8 -2.4,8 -2.4,40 29.6,40 29.6,37.6 28.2,37.6 "/>
-            <text transform="matrix(1 0 0 1 22.7291 35.1326)" class="st1 st2 st3">FTP</text>
+            <text transform="matrix(1 0 0 1 22.7291 35.1326)" class="st1 st2 st3">PRINTER</text>
             <path d="M40.8,30.2h-2.1v-4.1H26.3v4.1h-2.1c-0.8,0-1.4,0.6-1.4,1.4v6.9c0,0.8,0.6,1.4,1.4,1.4h2.1v4.1h12.4v-4.1h2.1
                 c0.8,0,1.4-0.6,1.4-1.4v-6.9C42.1,30.8,41.5,30.2,40.8,30.2z M27.7,27.4h9.6v2.7h-9.6V27.4z M37.3,42.5h-9.6v-6.9h9.6V42.5z
                 M40.8,38.4h-2.1v-4.1H26.3v4.1h-2.1v-6.9h16.5V38.4z"/>

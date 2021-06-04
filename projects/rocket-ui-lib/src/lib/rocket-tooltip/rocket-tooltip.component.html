@@ -1,6 +1,6 @@
 <div *ngIf='options.show' class='inline tooltip-pl'>
    <ibm-tooltip-icon *ngIf="!options.template" [placement]="options.placement || 'bottom'" [alignment]="options.alignment || 'start'" [content]="options.content || ''">
-      <ibm-icon-information [size]="options.size || '16'"></ibm-icon-information>
+      <rocket-icon type="information" [options]="{size: options.size || '16'}"></rocket-icon>
    </ibm-tooltip-icon>
 
    <span *ngIf="!!options.template"
@@ -10,7 +10,7 @@
       [trigger]="options.trigger || 'hover'"
       [placement]="options.placement || 'bottom'">
       <div role="button" class="bx--tooltip__trigger">
-         <ibm-icon-information [size]="options.size || '16'"></ibm-icon-information>
+         <rocket-icon type="information" [options]="{size: options.size || '16'}"></rocket-icon>
       </div>
    </span>
 </div>

@@ -28,7 +28,9 @@ export class RocketIconComponent implements OnInit {
    return {
      fill: this.options.color,
      stroke: this.options.stroke,
-     'stroke-width': this.options.strockWidth
+     'stroke-width': this.options.strockWidth,
+     width: this.options.size || 16 + 'px',
+     height: this.options.size || 16 + 'px'
    }
   }0
 
