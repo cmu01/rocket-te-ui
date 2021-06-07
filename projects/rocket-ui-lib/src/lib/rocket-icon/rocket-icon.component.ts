@@ -12,10 +12,12 @@ export class RocketIconComponent implements OnInit {
   };
   @Input() type = '';
   @Output() onClick = new EventEmitter();
+  svgStyles: any = {};
 
   constructor() { }
 
   ngOnInit(): void {
+    this.svgStyles = this.getStyle();
   }
 
   click(e) {
@@ -24,15 +26,15 @@ export class RocketIconComponent implements OnInit {
     }
   }
 
-  setColor() {
+  getStyle() {
    return {
-     fill: this.options.color,
-     stroke: this.options.stroke,
-     'stroke-width': this.options.strockWidth,
-     width: this.options.size || 16 + 'px',
-     height: this.options.size || 16 + 'px'
+    'width': (this.options.size || 16) + 'px',
+    'height': (this.options.size || 16) + 'px',
+    'fill': this.options.color,
+    'stroke': this.options.stroke,
+    'stroke-width': this.options.strockWidth
    }
-  }0
+  }
 
   getSrc() {
     if(this.options.isRsImg) {
