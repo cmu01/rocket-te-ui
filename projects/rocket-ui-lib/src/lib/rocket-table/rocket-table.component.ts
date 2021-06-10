@@ -183,14 +183,9 @@ export class RocketTableComponent implements OnInit {
     }
 
     const headers = (this.data.headers || []).map(d => d.key);
-    let data = (this.data.rows || []).map(d => {
-      const t = {};
-      headers.forEach(h => {
-        t[h] = d[h]
-      });
-      return t;
-    });
+    let data = this.data.rows || [];
     const pattNum = /^\d+$/;
+
     if(filter != null) {
       data = data.filter(d => {
         if(this.options.filterAllData) {
@@ -202,8 +197,15 @@ export class RocketTableComponent implements OnInit {
     }
     this.orgData = [];
     this.curData = JSON.parse(JSON.stringify(data));
+    data = data.map(d => {
+      const t = {};
+      headers.forEach(h => {
+        t[h] = d[h]
+      });
+      return t;
+    });
 
-    data.forEach(d => {
+    data.forEach((d, index) => {
       const keys = Object.keys(d);
       const tt = [];
 
@@ -211,7 +213,7 @@ export class RocketTableComponent implements OnInit {
         const item: any = {data: (m.toLowerCase() === 'size' && pattNum.test(d[m])) ? Number(d[m]).toLocaleString(undefined, 
           {maximumFractionDigits: 2}) : d[m]};
 
-        this.setStatus(d, m, item);
+        this.setStatus(d, m, item, index);
 
         tt.push(new TableItem(item));
       });
@@ -251,9 +253,11 @@ export class RocketTableComponent implements OnInit {
     });
   }
 
-  setStatus(d, m, item) {
+  setStatus(d, m, item, index) {
     if(m.toLowerCase() === 'action') {
+      d.rowExtendIndex = index;
       item.data = d;
+
       item.actions = item.actions;
       item.template = this.overflowMenuItemTemplate;
       return;
@@ -272,8 +276,7 @@ export class RocketTableComponent implements OnInit {
   }
 
   selected(action, $event) {
-    const key = this.options.primary;
-    const data = this.data.rows.find(d => d[key] == $event[key]);
+    const data = this.curData[$event.rowExtendIndex];
 
     this.actionTimer = setTimeout(() => {
       this.selectAction.emit({data, type: action.value});
@@ -323,7 +326,7 @@ export class RocketTableComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    // this.setPagination();
+    this.setPagination();
   }
 
   ngOnDestroy() {

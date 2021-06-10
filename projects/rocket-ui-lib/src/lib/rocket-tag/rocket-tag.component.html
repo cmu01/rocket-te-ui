@@ -6,11 +6,11 @@
     </span>
     <div *ngIf="options.done" [title]="options.succTitle"
       class="bx--tag__close-icon tag-status">
-      <svg class='rocket-tag-done-icon' ibmIconCheckmark ibmIcon="checkmark" size="16"></svg>
+      <rocket-icon class='rocket-tag-done-icon' type="checkmark-filled" [options]="{isAlone: true}"></rocket-icon>
     </div>
     <div *ngIf="options.failed" [title]="options.failedTitle"
       class="bx--tag__close-icon tag-status-failed">
-      <svg class='rocket-tag-done-icon' ibmIconInformation ibmIcon="information" size="16"></svg>
+      <rocket-icon class='rocket-tag-failed-icon' type="information" [options]="{isAlone: true}"></rocket-icon>
     </div>
     <button
         class="bx--tag__close-icon"
@@ -18,6 +18,6 @@
         [disabled]="options.disabled"
         [title]="options.closeButtonLabel || ''">
         <span class="bx--visually-hidden">{{options.closeButtonLabel}}</span>
-      <svg ibmIcon="close" ibmIconClose size="16"></svg>
+      <rocket-icon class='rocket-tag-close-icon' type="close" [options]="{isAlone: true}"></rocket-icon>
    </button>
 </div>

@@ -1,6 +1,6 @@
 {
   "name": "rocket-te-ui",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "author": "cmu",
   "license": "MIT",
   "main": "./dist/rocket-ui-lib",
