@@ -2,13 +2,12 @@
   <ibm-table-container>
     <ibm-table-toolbar-content>
       <ibm-search id='rocket-table-search' [clearButtonTitle] = "options.clearButtonTitle || ''" [placeholder]="(options.search || {}).placeholder || 'Search'" *ngIf='(options.showBtn || {}).search' size='sm' tableSearch="true" [value]='filter' [title]="options.filter || ''" autocomplete="off" (valueChange)="searchElm($event)" (clear)="clearElm()"></ibm-search>
-      <button *ngIf='(options.showBtn || {}).export' id='table-export-btn' size='sm' ibmButton="secondary" title=''>
-        <a class='a-table' href="{{exports()}}" download>{{options.labels.export}}</a>
-        </button>
-  
+      <button *ngIf='(options.showBtn || {}).export' id='table-export-btn' size='sm' ibmButton="secondary" title='' (click)="exports()">
+        {{options.labels.export}}
+      </button>
         <button *ngIf='(options.showBtn || {}).import' [id]="(id || options.id || 'rocket-table') + 'table-import-btn'" size='sm' ibmButton="secondary" (click)="import()" title=''>
-          {{options.labels.import}}
-        </button>
+        {{options.labels.import}}
+      </button>
       <button *ngIf='(options.showBtn || {}).add' size='sm'  id='table-add-btn' ibmButton="primary" (click)="addElm()" title='{{options.showAddButton.addLabel}}'>
         {{options.showAddButton.addLabel}}
       </button>
