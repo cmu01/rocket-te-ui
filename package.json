@@ -31,7 +31,10 @@
     "node-sass": "^5.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+	"carbon-components": "^10.30.0",
+    "carbon-components-angular": "^4.42.0",
+    "@carbon/icons-angular": "^11.2.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.3",
